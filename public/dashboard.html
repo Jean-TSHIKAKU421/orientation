@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord - Guide des filières</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Orientation Informatique</h1>
+            <div class="header-right">
+                <span id="user-display"></span>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer le mode d'affichage" title="Basculer mode clair/sombre">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+                <button id="logout-btn" class="btn-logout" title="Déconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barre de progression sticky -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">
+            <span class="progress-fill"></span>
+        </div>
+        <div class="steps" id="steps-container">
+            <span class="step" data-step="1">Accueil</span>
+            <span class="step" data-step="2">Notes</span>
+            <span class="step" data-step="3">Passions</span>
+            <span class="step" data-step="4">Témoignages</span>
+            <span class="step" data-step="5">Quiz</span>
+            <span class="step" data-step="6">Prérequis</span>
+            <span class="step" data-step="7">Filières</span>
+            <span class="step" data-step="8">Résultat</span>
+        </div>
+    </div>
+
+    <main>
+        <section id="dashboard-content" class="dashboard-section">
+            <!-- Contenu dynamique injecté par JS -->
+        </section>
+
+        <div class="nav-buttons">
+            <button id="prev-btn" class="btn-secondary" style="display:none;">← Précédent</button>
+            <button id="next-btn" class="btn-primary">Suivant →</button>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/dataLoader.js"></script>
+    <script src="js/guidance.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

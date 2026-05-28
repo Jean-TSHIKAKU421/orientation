@@ -1,0 +1,147 @@
+[
+    {
+        "id": 1,
+        "nom": "Alice Mbuyi",
+        "age": 28,
+        "photo": "assets/images/img1_f.jpg",
+        "profession": "Développeuse Full-Stack Senior",
+        "entreprise": "TechAfrica Solutions",
+        "filière": "gl",
+        "citation": "Le génie logiciel m'a permis de transformer ma passion pour la résolution de problèmes en une carrière épanouissante.",
+        "satisfaction": 5,
+        "parcours": {
+            "universite": "Université de Kinshasa",
+            "filiere_suivie": "Génie Logiciel",
+            "annee_debut": 2016,
+            "annee_fin": 2019,
+            "diplome": "Licence en Informatique - Mention Bien"
+        },
+        "carriere": {
+            "poste_actuel": "Développeuse Full-Stack Senior",
+            "entreprise_actuelle": "TechAfrica Solutions",
+            "technologies": ["React", "Node.js", "MongoDB", "Docker"],
+            "realisations": [
+                "A dirigé le développement d'une plateforme bancaire mobile utilisée par 500 000+ utilisateurs",
+                "Mentor pour 15 jeunes développeurs dans le programme TechWomen Africa",
+                "Conférencière sur les bonnes pratiques de développement logiciel"
+            ]
+        },
+        "conseil": "Si vous aimez créer des solutions concrètes et voir l'impact direct de votre code, le génie logiciel est fait pour vous. N'ayez pas peur des maths, la logique vient avec la pratique !"
+    },
+    {
+        "id": 2,
+        "nom": "Jean-Pierre Kalonji",
+        "age": 30,
+        "photo": "assets/images/img1_m.jpg",
+        "profession": "Administrateur Réseau Senior",
+        "entreprise": "Orange RDC",
+        "filière": "reseau",
+        "citation": "Grâce à la filière réseau, je gère aujourd'hui l'infrastructure critique qui connecte des millions de personnes.",
+        "satisfaction": 4,
+        "parcours": {
+            "universite": "Université Protestante au Congo",
+            "filiere_suivie": "Réseau & Télécommunication",
+            "annee_debut": 2015,
+            "annee_fin": 2018,
+            "diplome": "Licence en Informatique - Réseaux"
+        },
+        "carriere": {
+            "poste_actuel": "Administrateur Réseau Senior",
+            "entreprise_actuelle": "Orange RDC",
+            "technologies": ["Cisco", "Juniper", "Firewall", "MPLS", "VPN"],
+            "realisations": [
+                "A supervisé l'extension du réseau 4G dans 3 provinces",
+                "Certifié CCNA, CCNP Enterprise",
+                "A réduit les incidents réseau de 40% grâce à un système de monitoring proactif"
+            ]
+        },
+        "conseil": "Les réseaux sont le système nerveux de toute entreprise moderne. C'est un domaine qui demande de la rigueur et une veille technologique constante, mais les défis quotidiens sont passionnants."
+    },
+    {
+        "id": 3,
+        "nom": "Sarah Tshibangu",
+        "age": 26,
+        "photo": "assets/images/img2_f.jpg",
+        "profession": "UI/UX Designer Senior",
+        "entreprise": "AfriDesign Studio",
+        "filière": "dm",
+        "citation": "Le design m'a ouvert les portes d'un monde où la créativité rencontre la technologie pour améliorer la vie des utilisateurs.",
+        "satisfaction": 5,
+        "parcours": {
+            "universite": "Académie des Beaux-Arts de Kinshasa",
+            "filiere_suivie": "Design & Multimédia",
+            "annee_debut": 2017,
+            "annee_fin": 2020,
+            "diplome": "Licence en Design Multimédia - Mention Très Bien"
+        },
+        "carriere": {
+            "poste_actuel": "UI/UX Designer Senior",
+            "entreprise_actuelle": "AfriDesign Studio",
+            "technologies": ["Figma", "Adobe XD", "Sketch", "Principle", "After Effects"],
+            "realisations": [
+                "A conçu l'interface d'une application de santé utilisée dans 12 hôpitaux",
+                "Lauréate du concours Africa Design Award 2024",
+                "Forme des jeunes designers aux principes UX dans des ateliers gratuits"
+            ]
+        },
+        "conseil": "Le design n'est pas seulement une question d'esthétique, c'est comprendre l'humain pour créer des expériences intuitives. Développez votre sens de l'observation et votre empathie !"
+    },
+    {
+        "id": 4,
+        "nom": "Patrick Lukusa",
+        "age": 29,
+        "photo": "assets/images/img2_m.jpg",
+        "profession": "Data Analyst & Consultant BI",
+        "entreprise": "Deloitte Afrique",
+        "filière": "msi",
+        "citation": "La gestion des données m'a appris que derrière chaque chiffre se cache une histoire qui peut transformer une entreprise.",
+        "satisfaction": 4,
+        "parcours": {
+            "universite": "Université Catholique du Congo",
+            "filiere_suivie": "Management des Systèmes d'Information",
+            "annee_debut": 2016,
+            "annee_fin": 2019,
+            "diplome": "Licence en Informatique de Gestion"
+        },
+        "carriere": {
+            "poste_actuel": "Data Analyst & Consultant BI",
+            "entreprise_actuelle": "Deloitte Afrique",
+            "technologies": ["Power BI", "SQL", "Python", "Excel Avancé", "Tableau"],
+            "realisations": [
+                "A développé des tableaux de bord décisionnels pour 5 ministères",
+                "A formé 200+ cadres à la prise de décision basée sur les données",
+                "A optimisé les processus de reporting réduisant les délais de 60%"
+            ]
+        },
+        "conseil": "Les données sont le nouvel or noir. Si vous aimez donner du sens aux chiffres et aider les organisations à prendre de meilleures décisions, cette filière est votre voie."
+    },
+    {
+        "id": 5,
+        "nom": "Grace Mwana",
+        "age": 27,
+        "photo": "assets/images/img3_f.jpg",
+        "profession": "Ingénieure DevOps & Cloud",
+        "entreprise": "AWS Africa",
+        "filière": "asr",
+        "citation": "L'administration système m'a permis de construire les fondations sur lesquelles reposent toutes les applications modernes.",
+        "satisfaction": 5,
+        "parcours": {
+            "universite": "Université de Lubumbashi",
+            "filiere_suivie": "Administration Système & Réseau",
+            "annee_debut": 2017,
+            "annee_fin": 2020,
+            "diplome": "Licence en Informatique - Infrastructure"
+        },
+        "carriere": {
+            "poste_actuel": "Ingénieure DevOps & Cloud",
+            "entreprise_actuelle": "AWS Africa",
+            "technologies": ["AWS", "Terraform", "Kubernetes", "Docker", "Linux", "CI/CD"],
+            "realisations": [
+                "A migré l'infrastructure de 3 startups vers le cloud, réduisant les coûts de 45%",
+                "Certifiée AWS Solutions Architect Professional",
+                "Contributrice active à des projets open-source d'automatisation"
+            ]
+        },
+        "conseil": "L'administration système évolue rapidement vers le cloud et l'automatisation. Si vous aimez comprendre comment les choses fonctionnent en profondeur et résoudre des problèmes complexes, foncez !"
+    }
+]

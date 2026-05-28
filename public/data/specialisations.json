@@ -1,0 +1,262 @@
+[
+    {
+        "id": "gl",
+        "nom": "Génie Logiciel",
+        "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+        "debouchés": ["Développeur full-stack", "Architecte logiciel", "Ingénieur DevOps", "Chef de projet IT", "Développeur mobile"],
+        "details": {
+            "objectifs": "Former des ingénieurs capables de concevoir, développer, tester et maintenir des applications logicielles complexes en utilisant les méthodologies modernes de génie logiciel.",
+            "competences_cles": [
+                "Maîtrise de plusieurs langages de programmation (Java, C#, Python, JavaScript)",
+                "Conception d'architectures logicielles robustes",
+                "Gestion de bases de données relationnelles et NoSQL",
+                "Méthodologies agiles (Scrum, Kanban)",
+                "Tests unitaires et intégration continue (CI/CD)",
+                "Analyse et modélisation UML"
+            ],
+            "projets_types": [
+                "Développement d'une application de gestion bancaire",
+                "Création d'une API RESTful pour une plateforme e-commerce",
+                "Conception d'un système de recommandation",
+                "Développement d'une application mobile cross-platform"
+            ],
+            "difficultes": [
+                {
+                    "titre": "Charge de travail importante",
+                    "description": "Les projets de développement demandent beaucoup d'heures de travail, surtout en période de livraison. Il faut être capable de gérer la pression et les délais serrés."
+                },
+                {
+                    "titre": "Apprentissage continu",
+                    "description": "Les technologies évoluent rapidement. Vous devrez constamment vous former aux nouveaux langages, frameworks et outils pour rester compétitif."
+                },
+                {
+                    "titre": "Debugging et résolution de bugs complexes",
+                    "description": "Passer des heures à chercher l'origine d'un bug peut être frustrant. La patience et la méthodologie sont essentielles."
+                },
+                {
+                    "titre": "Travail en équipe et communication",
+                    "description": "Le développement logiciel est rarement solitaire. Il faut savoir collaborer avec d'autres développeurs, comprendre les besoins des clients et expliquer des choix techniques."
+                }
+            ],
+            "public_cible": "Étudiants passionnés par la programmation, aimant résoudre des problèmes logiques et créer des solutions concrètes. À l'aise avec les mathématiques et l'abstraction."
+        },
+        "coefficients_notes": {
+            "analyse_math": 0.10, "comptabilite": 0.00, "statistique": 0.05,
+            "reseaux": 0.05, "archi_ordi": 0.10, "vba": 0.05,
+            "base_donnees": 0.15, "prog_c": 0.15, "algo_python": 0.15,
+            "crea_pub": 0.00, "dessin_ordi": 0.00, "electronique": 0.00,
+            "theorie_info": 0.05, "comm_visuelle": 0.00, "prog_web": 0.10,
+            "hygiene_sante": 0.00, "comm_expression": 0.00, "anglais": 0.05,
+            "recherche_sci": 0.00
+        },
+        "passion_keywords": ["coder", "résoudre des problèmes", "algorithmes", "logique", "développement", "debugging", "programmation"]
+    },
+    {
+        "id": "dm",
+        "nom": "Design & Multimédia",
+        "description": "Création graphique, design d'interfaces, audiovisuel et multimédia. Vous développerez votre créativité à travers les outils de conception modernes.",
+        "debouchés": ["Web designer", "Graphiste", "UI/UX designer", "Motion designer", "Directeur artistique", "Infographiste"],
+        "details": {
+            "objectifs": "Former des créatifs maîtrisant les outils de conception graphique, le design d'interfaces utilisateur et la production de contenus multimédia pour le web et le print.",
+            "competences_cles": [
+                "Maîtrise de la suite Adobe (Photoshop, Illustrator, InDesign)",
+                "Design d'interfaces (UI) et expérience utilisateur (UX)",
+                "Création de maquettes et prototypes avec Figma",
+                "Montage vidéo et animation (After Effects, Premiere)",
+                "Théorie des couleurs et typographie",
+                "Design responsive et accessibilité web"
+            ],
+            "projets_types": [
+                "Création de l'identité visuelle complète d'une marque",
+                "Design d'une application mobile de A à Z",
+                "Réalisation d'une vidéo promotionnelle animée",
+                "Conception d'un site web responsive avec maquettes"
+            ],
+            "difficultes": [
+                {
+                    "titre": "Subjectivité et critique",
+                    "description": "Le design est subjectif. Vous devrez accepter les critiques et les retours clients, parfois difficiles à entendre, et savoir défendre vos choix créatifs."
+                },
+                {
+                    "titre": "Blocages créatifs",
+                    "description": "La créativité n'est pas constante. Les périodes de blocage créatif sont fréquentes et peuvent être stressantes quand les deadlines approchent."
+                },
+                {
+                    "titre": "Veille des tendances",
+                    "description": "Les tendances en design évoluent rapidement. Il faut constamment se tenir à jour et renouveler son inspiration pour ne pas proposer des designs dépassés."
+                },
+                {
+                    "titre": "Concurrence élevée",
+                    "description": "Le marché du design est très concurrentiel. Se constituer un portfolio solide et se démarquer demande du temps et de la persévérance."
+                }
+            ],
+            "public_cible": "Étudiants créatifs, sensibles à l'esthétique, aimant dessiner et concevoir des visuels. Curieux des nouvelles tendances et technologies visuelles."
+        },
+        "coefficients_notes": {
+            "analyse_math": 0.00, "comptabilite": 0.00, "statistique": 0.00,
+            "reseaux": 0.00, "archi_ordi": 0.05, "vba": 0.00,
+            "base_donnees": 0.00, "prog_c": 0.00, "algo_python": 0.00,
+            "crea_pub": 0.20, "dessin_ordi": 0.20, "electronique": 0.00,
+            "theorie_info": 0.05, "comm_visuelle": 0.25, "prog_web": 0.15,
+            "hygiene_sante": 0.00, "comm_expression": 0.05, "anglais": 0.05,
+            "recherche_sci": 0.00
+        },
+        "passion_keywords": ["design", "créativité", "dessin", "couleurs", "multimédia", "esthétique", "graphisme", "illustration"]
+    },
+    {
+        "id": "reseau",
+        "nom": "Réseau & Télécommunication",
+        "description": "Administration et sécurisation des réseaux informatiques, téléphonie IP et technologies de communication. Vous deviendrez expert en infrastructures réseau.",
+        "debouchés": ["Administrateur réseau", "Ingénieur sécurité", "Technicien télécom", "Architecte réseau", "Consultant en télécommunications"],
+        "details": {
+            "objectifs": "Former des spécialistes capables de concevoir, déployer, administrer et sécuriser des infrastructures réseau et de télécommunication pour les entreprises.",
+            "competences_cles": [
+                "Configuration de routeurs et switches (Cisco, Juniper)",
+                "Protocoles de routage (OSPF, BGP, MPLS)",
+                "Sécurité réseau (firewall, VPN, IDS/IPS)",
+                "Administration de systèmes de téléphonie IP",
+                "Diagnostic et dépannage réseau (Wireshark)",
+                "Conception d'architectures réseau redondantes"
+            ],
+            "projets_types": [
+                "Mise en place d'un réseau d'entreprise sécurisé",
+                "Déploiement d'un système de téléphonie IP",
+                "Configuration d'un VPN site-à-site",
+                "Audit de sécurité d'une infrastructure existante"
+            ],
+            "difficultes": [
+                {
+                    "titre": "Pression en cas de panne",
+                    "description": "Quand le réseau tombe en panne, toute l'entreprise est bloquée. La pression pour résoudre le problème rapidement est intense, parfois la nuit ou le week-end."
+                },
+                {
+                    "titre": "Complexité des protocoles",
+                    "description": "Les protocoles réseau sont nombreux et complexes. Comprendre leurs interactions et les configurer correctement demande une solide formation continue."
+                },
+                {
+                    "titre": "Astreintes et horaires décalés",
+                    "description": "Les interventions de maintenance se font souvent en dehors des heures de bureau pour ne pas perturber l'activité. Les astreintes sont fréquentes."
+                },
+                {
+                    "titre": "Évolution technologique rapide",
+                    "description": "Les technologies réseau évoluent vers le SDN, la virtualisation et le cloud. Il faut constamment se former pour ne pas devenir obsolète."
+                }
+            ],
+            "public_cible": "Étudiants méthodiques, patients, aimant comprendre comment les choses communiquent entre elles. À l'aise avec la logique et le dépannage."
+        },
+        "coefficients_notes": {
+            "analyse_math": 0.10, "comptabilite": 0.00, "statistique": 0.05,
+            "reseaux": 0.30, "archi_ordi": 0.15, "vba": 0.00,
+            "base_donnees": 0.05, "prog_c": 0.05, "algo_python": 0.05,
+            "crea_pub": 0.00, "dessin_ordi": 0.00, "electronique": 0.10,
+            "theorie_info": 0.10, "comm_visuelle": 0.00, "prog_web": 0.00,
+            "hygiene_sante": 0.00, "comm_expression": 0.00, "anglais": 0.05,
+            "recherche_sci": 0.00
+        },
+        "passion_keywords": ["réseaux", "dépanner", "sécurité", "câblage", "protocoles", "infrastructure", "connectivité"]
+    },
+    {
+        "id": "msi",
+        "nom": "Management des Systèmes d'Information",
+        "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+        "debouchés": ["Consultant BI", "Data analyst", "Chef de projet SI", "Administrateur ERP", "Business Analyst"],
+        "details": {
+            "objectifs": "Former des professionnels capables d'analyser les besoins en information des organisations, de gérer des projets SI et d'exploiter les données pour l'aide à la décision.",
+            "competences_cles": [
+                "Analyse et modélisation des processus métier",
+                "Gestion de bases de données et data warehouses",
+                "Outils de Business Intelligence (Power BI, Tableau)",
+                "Gestion de projet SI (méthodologies, cahier des charges)",
+                "ERP et progiciels de gestion intégrés (SAP, Odoo)",
+                "Analyse statistique et data mining"
+            ],
+            "projets_types": [
+                "Mise en place d'un tableau de bord décisionnel",
+                "Analyse des besoins et rédaction d'un cahier des charges",
+                "Déploiement d'un ERP dans une PME",
+                "Audit et optimisation des processus informatiques"
+            ],
+            "difficultes": [
+                {
+                    "titre": "Double compétence technique et métier",
+                    "description": "Il faut comprendre à la fois les aspects techniques et les processus métier. Cette double compétence demande du temps et de l'expérience à acquérir."
+                },
+                {
+                    "titre": "Résistance au changement",
+                    "description": "La mise en place de nouveaux systèmes rencontre souvent des résistances de la part des utilisateurs. Il faut savoir accompagner le changement avec pédagogie."
+                },
+                {
+                    "titre": "Gestion des priorités",
+                    "description": "Les demandes sont nombreuses et variées. Savoir prioriser et gérer les attentes des différentes parties prenantes est un défi quotidien."
+                },
+                {
+                    "titre": "Pression sur les résultats",
+                    "description": "Les projets SI sont souvent stratégiques et coûteux. Les attentes en termes de retour sur investissement sont élevées et la pression est forte."
+                }
+            ],
+            "public_cible": "Étudiants organisés, aimant les chiffres et l'analyse, avec un bon relationnel. Intéressés par le fonctionnement des entreprises et la prise de décision."
+        },
+        "coefficients_notes": {
+            "analyse_math": 0.15, "comptabilite": 0.10, "statistique": 0.15,
+            "reseaux": 0.05, "archi_ordi": 0.05, "vba": 0.10,
+            "base_donnees": 0.15, "prog_c": 0.00, "algo_python": 0.05,
+            "crea_pub": 0.00, "dessin_ordi": 0.00, "electronique": 0.00,
+            "theorie_info": 0.05, "comm_visuelle": 0.00, "prog_web": 0.05,
+            "hygiene_sante": 0.00, "comm_expression": 0.05, "anglais": 0.05,
+            "recherche_sci": 0.00
+        },
+        "passion_keywords": ["données", "statistiques", "gestion", "analyse", "décisionnel", "tableaux de bord", "reporting"]
+    },
+    {
+        "id": "asr",
+        "nom": "Administration Système & Réseau",
+        "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+        "debouchés": ["Administrateur système", "Ingénieur cloud", "DevOps", "Ingénieur infrastructure", "Administrateur base de données"],
+        "details": {
+            "objectifs": "Former des experts capables d'installer, configurer, maintenir et optimiser les serveurs et l'infrastructure informatique d'une organisation.",
+            "competences_cles": [
+                "Administration de serveurs Linux et Windows",
+                "Virtualisation (VMware, Hyper-V, KVM)",
+                "Cloud computing (AWS, Azure, Google Cloud)",
+                "Automatisation et scripting (Bash, PowerShell, Python)",
+                "Conteneurisation (Docker, Kubernetes)",
+                "Supervision et monitoring (Nagios, Grafana, Prometheus)"
+            ],
+            "projets_types": [
+                "Mise en place d'une infrastructure virtualisée",
+                "Migration de serveurs vers le cloud",
+                "Automatisation du déploiement avec Ansible",
+                "Mise en place d'un système de supervision complet"
+            ],
+            "difficultes": [
+                {
+                    "titre": "Disponibilité 24/7",
+                    "description": "Les serveurs ne dorment jamais. En cas de panne critique, vous devrez intervenir à toute heure, y compris la nuit, les week-ends et les jours fériés."
+                },
+                {
+                    "titre": "Responsabilité élevée",
+                    "description": "Une erreur de configuration peut entraîner la perte de données critiques ou l'arrêt complet des services. La pression est constante."
+                },
+                {
+                    "titre": "Éventail technologique large",
+                    "description": "Les technologies à maîtriser sont nombreuses et variées (OS, virtualisation, cloud, sécurité, automatisation). Rester à jour est un défi permanent."
+                },
+                {
+                    "titre": "Documentation et procédures",
+                    "description": "Une bonne administration exige une documentation rigoureuse. Beaucoup de temps est consacré à écrire et maintenir des procédures."
+                }
+            ],
+            "public_cible": "Étudiants rigoureux, autonomes, aimant comprendre le fonctionnement interne des systèmes. Patients et méthodiques face aux problèmes techniques."
+        },
+        "coefficients_notes": {
+            "analyse_math": 0.05, "comptabilite": 0.00, "statistique": 0.00,
+            "reseaux": 0.20, "archi_ordi": 0.15, "vba": 0.05,
+            "base_donnees": 0.10, "prog_c": 0.10, "algo_python": 0.10,
+            "crea_pub": 0.00, "dessin_ordi": 0.00, "electronique": 0.05,
+            "theorie_info": 0.05, "comm_visuelle": 0.00, "prog_web": 0.05,
+            "hygiene_sante": 0.00, "comm_expression": 0.00, "anglais": 0.05,
+            "recherche_sci": 0.05
+        },
+        "passion_keywords": ["serveurs", "linux", "automatisation", "virtualisation", "cloud", "scripts", "dépannage"]
+    }
+]

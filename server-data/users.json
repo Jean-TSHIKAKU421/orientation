@@ -1,0 +1,467 @@
+[
+  {
+    "id": "1779883162029",
+    "nom": "TSHIKAKU TSHITOMBENU JEAN",
+    "matricule": "24TT421SI",
+    "email": "jtshikaku@gmail.com",
+    "password": "JTT1234",
+    "dateInscription": "2026-05-27T11:59:22.029Z",
+    "progression": {
+      "notes": {
+        "analyse_math": 12,
+        "comptabilite": 14,
+        "reseaux": 10,
+        "statistique": 11,
+        "archi_ordi": 16,
+        "vba": 11,
+        "base_donnees": 15,
+        "prog_c": 13,
+        "algo_python": 16,
+        "crea_pub": 14,
+        "dessin_ordi": 13,
+        "electronique": 10,
+        "theorie_info": 9,
+        "comm_visuelle": 10.8,
+        "prog_web": 15,
+        "hygiene_sante": 15,
+        "comm_expression": 10,
+        "anglais": 10,
+        "recherche_sci": 0.8
+      },
+      "passions": [
+        "aucune_idee"
+      ],
+      "quizAnswers": {
+        "1": 0,
+        "36": 1,
+        "61": 2,
+        "80": 1,
+        "93": 1,
+        "105": 0,
+        "108": 0,
+        "157": 0,
+        "178": 2,
+        "187": 0
+      },
+      "quizPoints": {
+        "gl": 30,
+        "dm": 38,
+        "reseau": 15,
+        "msi": 23,
+        "asr": 16
+      },
+      "prerequis": [
+        "algo",
+        "poo",
+        "ui_ux",
+        "git",
+        "ui_ux",
+        "reseau_base",
+        "securite",
+        "uml",
+        "poo",
+        "securite"
+      ],
+      "likedFiliere": {
+        "gl": 1,
+        "dm": 1
+      }
+    },
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequisValides": [],
+    "suggestion": [
+      "gl",
+      "dm"
+    ],
+    "theme": "dark",
+    "historiqueEvaluations": [
+      {
+        "id": "1779973849541",
+        "date": "2026-05-28T13:10:49.541Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 4,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 1.9,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 3,
+          "anglais": 8,
+          "recherche_sci": 1.9
+        },
+        "passions": [
+          "aucune_idee"
+        ],
+        "quizPoints": {
+          "gl": 28,
+          "dm": 21,
+          "reseau": 26,
+          "msi": 39,
+          "asr": 30
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1
+        },
+        "resultats": [
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 58
+          },
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 56.4
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 58
+          },
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 56.4
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 46.7
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 38.1
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 37.1
+          }
+        ]
+      },
+      {
+        "id": "1779974030898",
+        "date": "2026-05-28T13:13:50.898Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 4,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 1.9,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 3,
+          "anglais": 8,
+          "recherche_sci": 1.9
+        },
+        "passions": [
+          "gl",
+          "asr"
+        ],
+        "quizPoints": {
+          "gl": 24,
+          "dm": 12,
+          "reseau": 34,
+          "msi": 19,
+          "asr": 28
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 60.8
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+            "debouchés": [
+              "Administrateur système",
+              "Ingénieur cloud",
+              "DevOps",
+              "Ingénieur infrastructure",
+              "Administrateur base de données"
+            ],
+            "score": 54.1
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 60.8
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 54.1
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 43
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 41.9
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 29.7
+          }
+        ]
+      }
+    ],
+    "derniereEvaluation": {
+      "id": "1779974030898",
+      "date": "2026-05-28T13:13:50.898Z",
+      "notes": {
+        "analyse_math": 15,
+        "comptabilite": 4,
+        "statistique": 0,
+        "reseaux": 0,
+        "archi_ordi": 5,
+        "vba": 14.9,
+        "base_donnees": 10,
+        "prog_c": 2,
+        "crea_pub": 11,
+        "algo_python": 11.9,
+        "electronique": 4,
+        "dessin_ordi": 5.9,
+        "comm_visuelle": 1.9,
+        "theorie_info": 5.9,
+        "prog_web": 5,
+        "hygiene_sante": 4,
+        "comm_expression": 3,
+        "anglais": 8,
+        "recherche_sci": 1.9
+      },
+      "passions": [
+        "gl",
+        "asr"
+      ],
+      "quizPoints": {
+        "gl": 24,
+        "dm": 12,
+        "reseau": 34,
+        "msi": 19,
+        "asr": 28
+      },
+      "prerequis": [
+        "algo",
+        "poo",
+        "couleurs",
+        "reseau_base",
+        "sql",
+        "poo",
+        "securite",
+        "ui_ux",
+        "montage",
+        "cablage",
+        "linux"
+      ],
+      "likedFiliere": {
+        "gl": 1,
+        "msi": 1,
+        "reseau": 1
+      },
+      "resultats": [
+        {
+          "id": "gl",
+          "nom": "Génie Logiciel",
+          "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+          "debouchés": [
+            "Développeur full-stack",
+            "Architecte logiciel",
+            "Ingénieur DevOps",
+            "Chef de projet IT",
+            "Développeur mobile"
+          ],
+          "score": 60.8
+        },
+        {
+          "id": "asr",
+          "nom": "Administration Système & Réseau",
+          "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+          "debouchés": [
+            "Administrateur système",
+            "Ingénieur cloud",
+            "DevOps",
+            "Ingénieur infrastructure",
+            "Administrateur base de données"
+          ],
+          "score": 54.1
+        }
+      ],
+      "tousLesScores": [
+        {
+          "id": "gl",
+          "nom": "Génie Logiciel",
+          "score": 60.8
+        },
+        {
+          "id": "asr",
+          "nom": "Administration Système & Réseau",
+          "score": 54.1
+        },
+        {
+          "id": "reseau",
+          "nom": "Réseau & Télécommunication",
+          "score": 43
+        },
+        {
+          "id": "msi",
+          "nom": "Management des Systèmes d'Information",
+          "score": 41.9
+        },
+        {
+          "id": "dm",
+          "nom": "Design & Multimédia",
+          "score": 29.7
+        }
+      ]
+    }
+  },
+  {
+    "id": "1779885323469",
+    "nom": "MUZALA MUKOSAYI JACQUES",
+    "matricule": "24MM421SI",
+    "email": "jacquesmuzala@gmail.com",
+    "password": "jacques1234",
+    "dateInscription": "2026-05-27T12:35:23.469Z",
+    "progression": {},
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequisValides": [],
+    "suggestion": null,
+    "theme": "dark"
+  },
+  {
+    "id": "1779892372789",
+    "nom": "YUMBA MALOBA JENNY",
+    "matricule": "24YM421SI",
+    "email": "jenny@gmail.com",
+    "password": "jenny1234",
+    "dateInscription": "2026-05-27T14:32:52.789Z",
+    "progression": {},
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequisValides": [],
+    "suggestion": null,
+    "theme": "dark"
+  },
+  {
+    "id": "1779973257513",
+    "nom": "Manassé Ngalu Kapepula",
+    "matricule": "24nk340si",
+    "email": "manassengalu00@gmail.com",
+    "password": "qycxyg-cyhnew-zatbA2",
+    "dateInscription": "2026-05-28T13:00:57.513Z",
+    "progression": {},
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequisValides": [],
+    "suggestion": null,
+    "theme": "light",
+    "historiqueEvaluations": [],
+    "derniereEvaluation": null
+  },
+  {
+    "id": "1779973293784",
+    "nom": "Ngongo Kitenge Aristote",
+    "matricule": "24nk352si@udbl.ac.cd",
+    "email": "aristotengongo917@gmail.com",
+    "password": "Aris2004.",
+    "dateInscription": "2026-05-28T13:01:33.784Z",
+    "progression": {},
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequisValides": [],
+    "suggestion": null,
+    "theme": "light",
+    "historiqueEvaluations": [],
+    "derniereEvaluation": null
+  }
+]
