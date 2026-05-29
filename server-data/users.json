@@ -288,11 +288,2259 @@
             "score": 29.7
           }
         ]
+      },
+      {
+        "id": "1780006978056",
+        "date": "2026-05-28T22:22:58.056Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 4,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 1.9,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 3,
+          "anglais": 5,
+          "recherche_sci": 1.9
+        },
+        "passions": [
+          "aucune_idee"
+        ],
+        "quizPoints": {
+          "gl": 14,
+          "dm": 5,
+          "reseau": 7,
+          "msi": 8,
+          "asr": 10
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 58.7
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 46.7
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 58.7
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 46.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 43.9
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 37.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 34.3
+          }
+        ]
+      },
+      {
+        "id": "1780007220717",
+        "date": "2026-05-28T22:27:00.717Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 4,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 1.9,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 3,
+          "anglais": 5,
+          "recherche_sci": 1.9
+        },
+        "passions": [
+          "aucune_idee"
+        ],
+        "quizPoints": {
+          "gl": 14,
+          "dm": 5,
+          "reseau": 7,
+          "msi": 8,
+          "asr": 10
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 58.7
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 46.7
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 58.7
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 46.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 43.9
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 37.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 34.3
+          }
+        ]
+      },
+      {
+        "id": "1780007271995",
+        "date": "2026-05-28T22:27:51.996Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "asr"
+        ],
+        "quizPoints": {
+          "gl": 33,
+          "dm": 14,
+          "reseau": 24,
+          "msi": 26,
+          "asr": 26
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+            "debouchés": [
+              "Administrateur système",
+              "Ingénieur cloud",
+              "DevOps",
+              "Ingénieur infrastructure",
+              "Administrateur base de données"
+            ],
+            "score": 54.4
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 54.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 47.4
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 38.2
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 35.6
+          }
+        ]
+      },
+      {
+        "id": "1780007277219",
+        "date": "2026-05-28T22:27:57.219Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "asr"
+        ],
+        "quizPoints": {
+          "gl": 33,
+          "dm": 14,
+          "reseau": 24,
+          "msi": 26,
+          "asr": 26
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+            "debouchés": [
+              "Administrateur système",
+              "Ingénieur cloud",
+              "DevOps",
+              "Ingénieur infrastructure",
+              "Administrateur base de données"
+            ],
+            "score": 54.4
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 54.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 47.4
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 38.2
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 35.6
+          }
+        ]
+      },
+      {
+        "id": "1780007623632",
+        "date": "2026-05-28T22:33:43.632Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 4,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 1.9,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 3,
+          "anglais": 5,
+          "recherche_sci": 1.9
+        },
+        "passions": [
+          "aucune_idee"
+        ],
+        "quizPoints": {
+          "gl": 14,
+          "dm": 5,
+          "reseau": 7,
+          "msi": 8,
+          "asr": 10
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 58.7
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 46.7
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 58.7
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 46.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 43.9
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 37.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 34.3
+          }
+        ]
+      },
+      {
+        "id": "1780007640398",
+        "date": "2026-05-28T22:34:00.398Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "asr"
+        ],
+        "quizPoints": {
+          "gl": 33,
+          "dm": 14,
+          "reseau": 24,
+          "msi": 26,
+          "asr": 26
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+            "debouchés": [
+              "Administrateur système",
+              "Ingénieur cloud",
+              "DevOps",
+              "Ingénieur infrastructure",
+              "Administrateur base de données"
+            ],
+            "score": 54.4
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 54.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 47.4
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 38.2
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 35.6
+          }
+        ]
+      },
+      {
+        "id": "1780007728559",
+        "date": "2026-05-28T22:35:28.559Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "asr"
+        ],
+        "quizPoints": {
+          "gl": 33,
+          "dm": 14,
+          "reseau": 24,
+          "msi": 26,
+          "asr": 26
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+            "debouchés": [
+              "Administrateur système",
+              "Ingénieur cloud",
+              "DevOps",
+              "Ingénieur infrastructure",
+              "Administrateur base de données"
+            ],
+            "score": 54.4
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 66.7
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 54.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 47.4
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 38.2
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 35.6
+          }
+        ]
+      },
+      {
+        "id": "1780009432176",
+        "date": "2026-05-28T23:03:52.176Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "msi",
+          "gl"
+        ],
+        "quizPoints": {
+          "gl": 19,
+          "dm": 16,
+          "reseau": 13,
+          "msi": 28,
+          "asr": 13
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 64.1
+          },
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 60.3
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 64.1
+          },
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 60.3
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 38.6
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 35.5
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 33
+          }
+        ]
+      },
+      {
+        "id": "1780009593153",
+        "date": "2026-05-28T23:06:33.153Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 47,
+          "dm": 18,
+          "reseau": 39,
+          "msi": 42,
+          "asr": 41
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 66.7
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "description": "Administration et sécurisation des réseaux informatiques, téléphonie IP et technologies de communication. Vous deviendrez expert en infrastructures réseau.",
+            "debouchés": [
+              "Administrateur réseau",
+              "Ingénieur sécurité",
+              "Technicien télécom",
+              "Architecte réseau",
+              "Consultant en télécommunications"
+            ],
+            "score": 52.8
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 66.7
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 52.8
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 49.5
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 43.6
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 34.8
+          }
+        ]
+      },
+      {
+        "id": "1780009719089",
+        "date": "2026-05-28T23:08:39.089Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 48,
+          "dm": 22,
+          "reseau": 37,
+          "msi": 42,
+          "asr": 37
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 66.7
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "description": "Administration et sécurisation des réseaux informatiques, téléphonie IP et technologies de communication. Vous deviendrez expert en infrastructures réseau.",
+            "debouchés": [
+              "Administrateur réseau",
+              "Ingénieur sécurité",
+              "Technicien télécom",
+              "Architecte réseau",
+              "Consultant en télécommunications"
+            ],
+            "score": 51.6
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 66.7
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 51.6
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 49.1
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 41.6
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.3
+          }
+        ]
+      },
+      {
+        "id": "1780010544015",
+        "date": "2026-05-28T23:22:24.015Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "poo",
+          "securite",
+          "ui_ux",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.8
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 52.8
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.8
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 52.8
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.1
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.3
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.5
+          }
+        ]
+      },
+      {
+        "id": "1780010819008",
+        "date": "2026-05-28T23:26:59.008Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780010851232",
+        "date": "2026-05-28T23:27:31.232Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780011195739",
+        "date": "2026-05-28T23:33:15.739Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780011426574",
+        "date": "2026-05-28T23:37:06.574Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780012278747",
+        "date": "2026-05-28T23:51:18.747Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780012557345",
+        "date": "2026-05-28T23:55:57.345Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780012724750",
+        "date": "2026-05-28T23:58:44.750Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780012764974",
+        "date": "2026-05-28T23:59:24.974Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
+      },
+      {
+        "id": "1780012894584",
+        "date": "2026-05-29T00:01:34.584Z",
+        "notes": {
+          "analyse_math": 15,
+          "comptabilite": 4,
+          "statistique": 0,
+          "reseaux": 0,
+          "archi_ordi": 5,
+          "vba": 14.9,
+          "base_donnees": 10,
+          "prog_c": 2,
+          "crea_pub": 11,
+          "algo_python": 11.9,
+          "electronique": 6,
+          "dessin_ordi": 5.9,
+          "comm_visuelle": 6,
+          "theorie_info": 5.9,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 8,
+          "recherche_sci": 6
+        },
+        "passions": [
+          "gl",
+          "reseau"
+        ],
+        "quizPoints": {
+          "gl": 40,
+          "dm": 26,
+          "reseau": 30,
+          "msi": 52,
+          "asr": 35
+        },
+        "prerequis": [
+          "algo",
+          "couleurs",
+          "reseau_base",
+          "sql",
+          "securite",
+          "montage",
+          "cablage",
+          "linux",
+          "git",
+          "design",
+          "powerbi",
+          "excel",
+          "uml",
+          "routage",
+          "git",
+          "virtualisation",
+          "docker",
+          "poo"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "msi": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 53
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 61.4
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 53
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 47.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 36.1
+          }
+        ]
       }
     ],
     "derniereEvaluation": {
-      "id": "1779974030898",
-      "date": "2026-05-28T13:13:50.898Z",
+      "id": "1780012894584",
+      "date": "2026-05-29T00:01:34.584Z",
       "notes": {
         "analyse_math": 15,
         "comptabilite": 4,
@@ -304,39 +2552,46 @@
         "prog_c": 2,
         "crea_pub": 11,
         "algo_python": 11.9,
-        "electronique": 4,
+        "electronique": 6,
         "dessin_ordi": 5.9,
-        "comm_visuelle": 1.9,
+        "comm_visuelle": 6,
         "theorie_info": 5.9,
         "prog_web": 5,
         "hygiene_sante": 4,
-        "comm_expression": 3,
+        "comm_expression": 8,
         "anglais": 8,
-        "recherche_sci": 1.9
+        "recherche_sci": 6
       },
       "passions": [
         "gl",
-        "asr"
+        "reseau"
       ],
       "quizPoints": {
-        "gl": 24,
-        "dm": 12,
-        "reseau": 34,
-        "msi": 19,
-        "asr": 28
+        "gl": 40,
+        "dm": 26,
+        "reseau": 30,
+        "msi": 52,
+        "asr": 35
       },
       "prerequis": [
         "algo",
-        "poo",
         "couleurs",
         "reseau_base",
         "sql",
-        "poo",
         "securite",
-        "ui_ux",
         "montage",
         "cablage",
-        "linux"
+        "linux",
+        "git",
+        "design",
+        "powerbi",
+        "excel",
+        "uml",
+        "routage",
+        "git",
+        "virtualisation",
+        "docker",
+        "poo"
       ],
       "likedFiliere": {
         "gl": 1,
@@ -355,50 +2610,51 @@
             "Chef de projet IT",
             "Développeur mobile"
           ],
-          "score": 60.8
+          "score": 61.4
         },
         {
-          "id": "asr",
-          "nom": "Administration Système & Réseau",
-          "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+          "id": "msi",
+          "nom": "Management des Systèmes d'Information",
+          "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
           "debouchés": [
-            "Administrateur système",
-            "Ingénieur cloud",
-            "DevOps",
-            "Ingénieur infrastructure",
-            "Administrateur base de données"
+            "Consultant BI",
+            "Data analyst",
+            "Chef de projet SI",
+            "Administrateur ERP",
+            "Business Analyst"
           ],
-          "score": 54.1
+          "score": 53
         }
       ],
       "tousLesScores": [
         {
           "id": "gl",
           "nom": "Génie Logiciel",
-          "score": 60.8
-        },
-        {
-          "id": "asr",
-          "nom": "Administration Système & Réseau",
-          "score": 54.1
-        },
-        {
-          "id": "reseau",
-          "nom": "Réseau & Télécommunication",
-          "score": 43
+          "score": 61.4
         },
         {
           "id": "msi",
           "nom": "Management des Systèmes d'Information",
-          "score": 41.9
+          "score": 53
+        },
+        {
+          "id": "reseau",
+          "nom": "Réseau & Télécommunication",
+          "score": 47.2
+        },
+        {
+          "id": "asr",
+          "nom": "Administration Système & Réseau",
+          "score": 39.5
         },
         {
           "id": "dm",
           "nom": "Design & Multimédia",
-          "score": 29.7
+          "score": 36.1
         }
       ]
-    }
+    },
+    "photo": "/uploads/profiles/24TT421SI.jpg"
   },
   {
     "id": "1779885323469",
@@ -413,7 +2669,8 @@
     "quizPoints": {},
     "prerequisValides": [],
     "suggestion": null,
-    "theme": "dark"
+    "theme": "dark",
+    "photo": "/uploads/profiles/24MM421SI-1780014604017.jpg"
   },
   {
     "id": "1779892372789",
@@ -428,7 +2685,8 @@
     "quizPoints": {},
     "prerequisValides": [],
     "suggestion": null,
-    "theme": "dark"
+    "theme": "dark",
+    "photo": "/uploads/profiles/24YM421SI.jpg"
   },
   {
     "id": "1779973257513",
@@ -454,6 +2712,23 @@
     "email": "aristotengongo917@gmail.com",
     "password": "Aris2004.",
     "dateInscription": "2026-05-28T13:01:33.784Z",
+    "progression": {},
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequisValides": [],
+    "suggestion": null,
+    "theme": "light",
+    "historiqueEvaluations": [],
+    "derniereEvaluation": null
+  },
+  {
+    "id": "1780009264474",
+    "nom": "KONA KEMA Lumière",
+    "matricule": "24KK421SI",
+    "email": "kona@gmail.com",
+    "password": "kona1234",
+    "dateInscription": "2026-05-28T23:01:04.474Z",
     "progression": {},
     "notes": {},
     "passions": [],

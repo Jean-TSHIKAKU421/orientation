@@ -7,6 +7,37 @@ if (!currentUser) {
 }
 
 // ==========================================
+// OVERLAY DE BIENVENUE
+// ==========================================
+(function showWelcomeOverlay() {
+    const overlay = document.getElementById('welcome-overlay');
+    const message = document.getElementById('welcome-message');
+
+    // Message personnalisé
+    const heure = new Date().getHours();
+    let salutation;
+    if (heure < 6) salutation = 'Bonne nuit';
+    else if (heure < 12) salutation = 'Bonjour';
+    else if (heure < 18) salutation = 'Bon après-midi';
+    else salutation = 'Bonsoir';
+
+    message.textContent = `${salutation} et bienvenue cher(e) ${currentUser.nom} !`;
+
+    // Afficher l'overlay
+    overlay.style.display = 'flex';
+
+    // Masquer après 3 secondes
+    setTimeout(() => {
+        overlay.classList.add('fade-out');
+
+        // Supprimer complètement après la transition
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 500);
+    }, 6000);
+})();
+
+// ==========================================
 // VÉRIFICATION D'UNE ÉVALUATION PRÉCÉDENTE
 // ==========================================
 let evaluationPrecedente = null;
@@ -53,6 +84,62 @@ if (currentUser.theme) {
     }).catch(err => console.error('Synchro thème échouée', err));
 }
 
+
+// ==========================================
+// OVERLAY D'AU REVOIR
+// ==========================================
+function showGoodbyeOverlay() {
+    const overlay = document.getElementById('goodbye-overlay');
+    const nameSpan = document.getElementById('goodbye-name');
+    const countdownEl = document.getElementById('goodbye-countdown');
+    const closeBtn = document.getElementById('goodbye-close-btn');
+
+    // Afficher le nom
+    nameSpan.textContent = currentUser.nom;
+
+    // Afficher l'overlay
+    overlay.style.display = 'flex';
+
+    // Compte à rebours
+    let countdown = 10;
+    countdownEl.textContent = countdown;
+
+    const countdownInterval = setInterval(() => {
+        countdown--;
+        countdownEl.textContent = countdown;
+
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            logout();
+        }
+    }, 1000);
+
+    // Bouton de déconnexion immédiate
+    closeBtn.addEventListener('click', () => {
+        clearInterval(countdownInterval);
+        logout();
+    });
+
+    // Empêcher la fermeture accidentelle
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            // Ne rien faire, l'utilisateur doit cliquer sur le bouton
+        }
+    });
+}
+
+// Fonction de déconnexion propre
+function logout() {
+    quizQuestions = [];
+    currentQuizIndex = 0;
+    quizTermine = false;
+    sessionStorage.removeItem('currentUser');
+    sessionStorage.removeItem('orientationProgress');
+    sessionStorage.removeItem('quizCurrent');
+    sessionStorage.removeItem('completedSteps');
+    window.location.href = '/login';
+}
+
 // ==========================================
 // ÉLÉMENTS DU DOM
 // ==========================================
@@ -63,7 +150,315 @@ const progressFill = document.querySelector('.progress-fill');
 const userDisplay = document.getElementById('user-display');
 const logoutBtn = document.getElementById('logout-btn');
 
-userDisplay.innerHTML = `<i class="fas fa-user-circle"></i> ${currentUser.nom}`;
+// Affichage du nom utilisateur avec photo
+const userPhotoHeader = document.getElementById('user-photo-header');
+const userIconHeader = document.getElementById('user-icon-header');
+const userNameHeader = document.getElementById('user-name-header');
+const userMatriculeHeader = document.getElementById('user-matricule-header');
+
+userNameHeader.textContent = currentUser.nom;
+
+// Charger la photo si elle existe
+if (currentUser.photo) {
+    userPhotoHeader.src = currentUser.photo;
+    userPhotoHeader.style.display = 'inline-block';
+    userIconHeader.style.display = 'none';
+} else {
+    userPhotoHeader.style.display = 'none';
+    userIconHeader.style.display = 'inline-block';
+}
+
+// ==========================================
+// MODALE PROFIL UTILISATEUR
+// ==========================================
+
+// Rendre le nom cliquable
+userDisplay.style.cursor = 'pointer';
+userDisplay.title = 'Voir mon profil';
+
+userDisplay.addEventListener('click', () => {
+    openProfileModal();
+});
+
+function openProfileModal() {
+    const modal = document.getElementById('profile-modal');
+    const overlay = modal.querySelector('.profile-modal-overlay');
+    const closeBtn = modal.querySelector('.profile-modal-close');
+
+    // Remplir les informations
+    document.getElementById('profile-name').textContent = currentUser.nom;
+    document.getElementById('profile-matricule').textContent = currentUser.matricule;
+
+    // Avatar avec possibilité de changer la photo
+    const avatarContainer = document.querySelector('.profile-avatar');
+    if (currentUser.photo) {
+        avatarContainer.innerHTML = `
+            <img src="${currentUser.photo}" alt="Photo de profil" class="profile-avatar-img" id="profile-avatar-img">
+            <div class="profile-avatar-overlay" id="profile-avatar-overlay">
+                <span>📷 Modifier</span>
+            </div>
+        `;
+    } else {
+        avatarContainer.innerHTML = `
+            <i class="fas fa-user-circle" id="profile-avatar-icon"></i>
+            <div class="profile-avatar-overlay" id="profile-avatar-overlay">
+                <span>📷 Ajouter une photo</span>
+            </div>
+        `;
+    }
+
+    // Supprimer l'ancien input file s'il existe
+    let fileInput = document.getElementById('profile-photo-input');
+    if (fileInput) {
+        fileInput.remove();
+    }
+
+    // Créer un nouvel input file
+    fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.id = 'profile-photo-input';
+    fileInput.accept = 'image/*';
+    fileInput.style.display = 'none';
+    document.body.appendChild(fileInput);
+
+    // Gérer le clic sur l'avatar
+    const avatarClickHandler = () => {
+        fileInput.value = '';
+        fileInput.click();
+    };
+
+    avatarContainer.removeEventListener('click', avatarClickHandler);
+    avatarContainer.addEventListener('click', avatarClickHandler);
+
+    // Gérer le changement de fichier
+    fileInput.onchange = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        if (file.size > 2 * 1024 * 1024) {
+            alert('⚠️ La photo ne doit pas dépasser 2 Mo.');
+            fileInput.value = '';
+            return;
+        }
+
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        if (!allowedTypes.includes(file.type)) {
+            alert('⚠️ Type de fichier non autorisé. Utilisez JPG, PNG, GIF ou WEBP.');
+            fileInput.value = '';
+            return;
+        }
+
+        const overlayEl = document.getElementById('profile-avatar-overlay');
+        if (overlayEl) {
+            overlayEl.innerHTML = '<span>⏳ Chargement...</span>';
+            overlayEl.style.opacity = '1';
+        }
+
+        const formData = new FormData();
+        formData.append('photo', file);
+
+        try {
+            const response = await fetch(`/api/upload-photo/${currentUser.matricule}`, {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                const newPhotoUrl = data.photoUrl + '?t=' + Date.now();
+
+                currentUser.photo = data.photoUrl;
+                sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+                const userPhotoHeader = document.getElementById('user-photo-header');
+                const userIconHeader = document.getElementById('user-icon-header');
+                if (userPhotoHeader && userIconHeader) {
+                    userPhotoHeader.src = newPhotoUrl;
+                    userPhotoHeader.style.display = 'inline-block';
+                    userIconHeader.style.display = 'none';
+                }
+
+                const avatarImgNow = document.getElementById('profile-avatar-img');
+                const avatarIconNow = document.getElementById('profile-avatar-icon');
+
+                if (avatarImgNow) {
+                    avatarImgNow.src = newPhotoUrl;
+                } else if (avatarIconNow) {
+                    avatarContainer.innerHTML = `
+                        <img src="${newPhotoUrl}" alt="Photo de profil" class="profile-avatar-img" id="profile-avatar-img">
+                        <div class="profile-avatar-overlay" id="profile-avatar-overlay">
+                            <span>📷 Modifier</span>
+                        </div>
+                    `;
+                }
+
+                const overlayNow = document.getElementById('profile-avatar-overlay');
+                if (overlayNow) {
+                    overlayNow.innerHTML = '<span>📷 Modifier</span>';
+                    overlayNow.style.opacity = '';
+                }
+            } else {
+                alert('❌ ' + (data.message || 'Erreur lors du téléchargement.'));
+                if (overlayEl) {
+                    overlayEl.innerHTML = '<span>📷 Modifier</span>';
+                    overlayEl.style.opacity = '';
+                }
+            }
+        } catch (err) {
+            alert('❌ Erreur lors du téléchargement de la photo.');
+            if (overlayEl) {
+                overlayEl.innerHTML = '<span>📷 Modifier</span>';
+                overlayEl.style.opacity = '';
+            }
+        }
+
+        fileInput.value = '';
+    };
+
+    // Infos personnelles
+    const infoGrid = document.getElementById('profile-info');
+    const dateInscription = currentUser.dateInscription
+        ? new Date(currentUser.dateInscription).toLocaleDateString('fr-FR', {
+            day: 'numeric', month: 'long', year: 'numeric'
+          })
+        : 'Inconnue';
+
+    infoGrid.innerHTML = `
+        <div class="profile-info-item">
+            <div class="profile-info-label">Nom complet</div>
+            <div class="profile-info-value">${currentUser.nom}</div>
+        </div>
+        <div class="profile-info-item">
+            <div class="profile-info-label">Matricule</div>
+            <div class="profile-info-value">${currentUser.matricule}</div>
+        </div>
+        <div class="profile-info-item">
+            <div class="profile-info-label">Email</div>
+            <div class="profile-info-value">${currentUser.email || 'Non renseigné'}</div>
+        </div>
+        <div class="profile-info-item">
+            <div class="profile-info-label">Inscrit depuis</div>
+            <div class="profile-info-value">${dateInscription}</div>
+        </div>
+    `;
+
+    // Historique des évaluations
+    const evalContainer = document.getElementById('profile-evaluations');
+
+    fetch(`/api/get-evaluations/${currentUser.matricule}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.success && data.historique && data.historique.length > 0) {
+                evalContainer.innerHTML = data.historique.map((evalItem, index) => {
+                    const date = new Date(evalItem.date).toLocaleDateString('fr-FR', {
+                        day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
+                    });
+                    const topResult = evalItem.resultats?.[0]?.nom || 'N/A';
+                    const topScore = evalItem.resultats?.[0]?.score || '-';
+
+                    return `
+                        <div class="profile-eval-item">
+                            <span class="profile-eval-date">
+                                ${index === data.historique.length - 1 ? '🟢 Dernière' : '📅'} ${date}
+                            </span>
+                            <span class="profile-eval-result">${topResult} - ${topScore} pts</span>
+                        </div>
+                    `;
+                }).join('');
+            } else {
+                evalContainer.innerHTML = '<p class="profile-no-data">Aucune évaluation effectuée</p>';
+            }
+        })
+        .catch(() => {
+            evalContainer.innerHTML = '<p class="profile-no-data">Impossible de charger l\'historique</p>';
+        });
+
+    // Préférences
+    const prefsGrid = document.getElementById('profile-preferences');
+    const currentTheme = currentUser.theme || 'light';
+    prefsGrid.innerHTML = `
+        <div class="profile-info-item profile-theme-item" id="profile-theme-toggle">
+            <div class="profile-info-label">Thème</div>
+            <div class="profile-info-value profile-theme-value">
+                <span class="theme-indicator ${currentTheme}"></span>
+                <span id="profile-theme-text">${currentTheme === 'dark' ? 'Sombre' : 'Clair'}</span>
+                <span class="theme-toggle-icon">🔄</span>
+            </div>
+        </div>
+        <div class="profile-info-item">
+            <div class="profile-info-label">Dernière activité</div>
+            <div class="profile-info-value">${new Date().toLocaleDateString('fr-FR')}</div>
+        </div>
+        <div class="profile-info-item">
+            <div class="profile-info-label">Évaluations effectuées</div>
+            <div class="profile-info-value">${historiqueEvaluations.length || 0}</div>
+        </div>
+        <div class="profile-info-item">
+            <div class="profile-info-label">Photo de profil</div>
+            <div class="profile-info-value">${currentUser.photo ? '✅ Personnalisée' : '❌ Par défaut'}</div>
+        </div>
+    `;
+
+    // Gérer le clic sur le thème
+    const themeItem = document.getElementById('profile-theme-toggle');
+    if (themeItem) {
+        themeItem.addEventListener('click', () => {
+            const newTheme = currentUser.theme === 'dark' ? 'light' : 'dark';
+            
+            // Appliquer le thème
+            if (newTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+            
+            // Mettre à jour currentUser
+            currentUser.theme = newTheme;
+            sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+            
+            // Mettre à jour l'affichage dans la modale
+            const themeText = document.getElementById('profile-theme-text');
+            const themeIndicator = themeItem.querySelector('.theme-indicator');
+            if (themeText) {
+                themeText.textContent = newTheme === 'dark' ? 'Sombre' : 'Clair';
+            }
+            if (themeIndicator) {
+                themeIndicator.className = `theme-indicator ${newTheme}`;
+            }
+            
+            // Sauvegarder côté serveur
+            fetch('/api/save-theme', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    matricule: currentUser.matricule,
+                    theme: newTheme
+                })
+            }).catch(err => console.error('Erreur sauvegarde thème:', err));
+        });
+    }
+
+    // Afficher la modale
+    modal.style.display = 'flex';
+
+    // Fermer la modale
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    closeBtn.onclick = closeModal;
+    overlay.onclick = closeModal;
+
+    document.addEventListener('keydown', function escHandler(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', escHandler);
+        }
+    });
+}
 
 // ==========================================
 // ÉTAT DE L'ORIENTATION
@@ -187,57 +582,88 @@ function showPreviousEvaluationPrompt() {
         hour: '2-digit', minute: '2-digit'
     });
 
+    // Calculer le temps écoulé
+    const maintenant = new Date();
+    const diffJours = Math.floor((maintenant - dateDerniereEval) / (1000 * 60 * 60 * 24));
+
+    let messageTemps;
+    if (diffJours === 0) messageTemps = "Aujourd'hui";
+    else if (diffJours === 1) messageTemps = "Hier";
+    else if (diffJours < 7) messageTemps = `Il y a ${diffJours} jours`;
+    else if (diffJours < 30) messageTemps = `Il y a ${Math.floor(diffJours / 7)} semaine(s)`;
+    else messageTemps = `Il y a ${Math.floor(diffJours / 30)} mois`;
+
+    const resultats = evaluationPrecedente.resultats || [];
+    const medailles = ['🥇', '🥈'];
+
     content.innerHTML = `
         <div class="previous-eval-container">
-            <h2>📂 Évaluation précédente détectée</h2>
-            <p>Vous avez déjà effectué une évaluation le <strong>${dateFormatee}</strong>.</p>
-            
-            <div class="previous-results">
-                <h3>Résultats précédents :</h3>
-                ${evaluationPrecedente.resultats.map((r, i) => `
-                    <p>${i === 0 ? '🥇' : '🥈'} <strong>${r.nom}</strong> - Score : ${r.score} pts</p>
+            <div class="previous-eval-badge">
+                <span class="badge-dot"></span>
+                ${messageTemps}
+            </div>
+
+            <div class="previous-eval-icon">📂</div>
+            <h2>Évaluation précédente détectée</h2>
+            <p class="previous-eval-date">Effectuée le <strong>${dateFormatee}</strong></p>
+
+            <div class="previous-results-cards">
+                ${resultats.map((r, i) => `
+                    <div class="prev-result-card ${i === 0 ? 'top-result' : ''}">
+                        <div class="prev-result-rank">${medailles[i]}</div>
+                        <div class="prev-result-info">
+                            <h4>${r.nom}</h4>
+                            <div class="prev-result-score">
+                                <div class="prev-score-bar">
+                                    <div class="prev-score-fill" style="width: ${Math.round((r.score / 100) * 100)}%"></div>
+                                </div>
+                                <span class="prev-score-value">${r.score} pts</span>
+                            </div>
+                        </div>
+                    </div>
                 `).join('')}
             </div>
 
-            <p>Que souhaitez-vous faire ?</p>
-            
-            <div class="eval-choices">
-                <button id="btn-reuse-notes" class="btn-primary btn-choice">
-                    📝 Réutiliser mes anciennes notes<br>
-                    <small>Vos notes précédentes seront rechargées, vous pourrez les modifier</small>
-                </button>
-                
-                <button id="btn-new-eval" class="btn-secondary btn-choice">
-                    🔄 Nouvelle évaluation complète<br>
-                    <small>Tout recommencer depuis le début</small>
-                </button>
+            <div class="previous-eval-actions">
+                <p>Que souhaitez-vous faire ?</p>
+                <div class="eval-choices">
+                    <button id="btn-reuse-notes" class="btn-primary btn-choice">
+                        <span class="choice-icon">📝</span>
+                        <span class="choice-text">
+                            <strong>Réutiliser mes notes</strong>
+                            <small>Vos notes, passions et prérequis seront restaurés. Le quiz sera à refaire.</small>
+                        </span>
+                    </button>
+                    <button id="btn-new-eval" class="btn-secondary btn-choice">
+                        <span class="choice-icon">🔄</span>
+                        <span class="choice-text">
+                            <strong>Nouvelle évaluation</strong>
+                            <small>Tout recommencer depuis le début avec des données vierges.</small>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
     `;
 
     document.getElementById('btn-reuse-notes').addEventListener('click', () => {
-        // Récupérer les anciennes notes
         state.notes = { ...evaluationPrecedente.notes };
         state.passions = [...(evaluationPrecedente.passions || [])];
         state.prerequis = [...(evaluationPrecedente.prerequis || [])];
         state.likedFiliere = { ...(evaluationPrecedente.likedFiliere || {}) };
-        
-        // Réinitialiser le quiz (sera refait)
         state.quizAnswers = {};
         state.quizPoints = { gl: 0, dm: 0, reseau: 0, msi: 0, asr: 0 };
-        
-        // Aller directement à l'étape des passions
         currentStep = 3;
         completedSteps.add(1);
         completedSteps.add(2);
-        
         renderStep();
+        window.scrollTo({ top: 0, behavior: 'instant' });
     });
 
     document.getElementById('btn-new-eval').addEventListener('click', () => {
-        // Tout recommencer
         evaluationPrecedente = null;
         renderStep();
+        window.scrollTo({ top: 0, behavior: 'instant' });
     });
 }
 
@@ -245,57 +671,143 @@ function renderComparaison(nouveauxScores, evaluationPrecedente) {
     if (!evaluationPrecedente.tousLesScores) return '';
 
     const precedentScores = evaluationPrecedente.tousLesScores;
-    
-    // Trouver les filières qui ont le plus progressé
+    const dateDerniereEval = new Date(evaluationPrecedente.date);
+    const dateFormatee = dateDerniereEval.toLocaleDateString('fr-FR', {
+        day: 'numeric', month: 'long', year: 'numeric'
+    });
+
+    // Comparaisons détaillées
     const comparaisons = nouveauxScores.map(nouveau => {
         const precedent = precedentScores.find(p => p.id === nouveau.id);
         const difference = precedent ? Math.round((nouveau.score - precedent.score) * 10) / 10 : 0;
         return { ...nouveau, precedent: precedent?.score || 0, difference };
     });
 
-    // Trier par différence (meilleure progression en premier)
+    // Meilleures progressions
     const meilleuresProgressions = [...comparaisons]
         .filter(c => c.difference > 0)
         .sort((a, b) => b.difference - a.difference);
 
-    let html = '<div class="comparaison-container">';
-    
-    if (meilleuresProgressions.length > 0) {
-        html += '<div class="comparaison-card progression">';
-        html += '<h4>📈 Progression détectée</h4>';
-        html += '<p>Vos nouvelles notes montrent une amélioration dans les filières suivantes :</p>';
-        html += '<ul>';
-        meilleuresProgressions.slice(0, 3).forEach(c => {
-            html += `<li><strong>${c.nom}</strong> : +${c.difference} pts (passé de ${c.precedent} à ${c.score} pts)</li>`;
-        });
-        html += '</ul>';
-        html += '</div>';
-    }
+    // Filières en baisse
+    const filieresEnBaisse = [...comparaisons]
+        .filter(c => c.difference < 0)
+        .sort((a, b) => a.difference - b.difference);
 
-    // Vérifier si la recommandation a changé
+    // Ancien top 1
     const ancienTop1 = evaluationPrecedente.resultats?.[0];
     const nouveauTop1 = nouveauxScores[0];
-    
-    if (ancienTop1 && nouveauTop1 && ancienTop1.id !== nouveauTop1.id) {
-        html += '<div class="comparaison-card changement">';
-        html += '<h4>🔄 Changement de recommandation</h4>';
-        html += `<p>Votre filière recommandée a changé :</p>`;
-        html += `<p><strong>Avant :</strong> ${ancienTop1.nom} (${ancienTop1.score} pts)</p>`;
-        html += `<p><strong>Maintenant :</strong> ${nouveauTop1.nom} (${nouveauTop1.score} pts)</p>`;
-        html += '</div>';
-    } else if (ancienTop1 && nouveauTop1) {
-        html += '<div class="comparaison-card stabilite">';
-        html += '<h4>✅ Confirmation</h4>';
-        html += `<p>Votre filière recommandée reste <strong>${nouveauTop1.nom}</strong>.</p>`;
-        if (nouveauTop1.score > ancienTop1.score) {
-            html += `<p>Votre score a augmenté de <strong>+${Math.round((nouveauTop1.score - ancienTop1.score) * 10) / 10} pts</strong> !</p>`;
-        }
-        html += '</div>';
+
+    let html = '<div class="comparaison-container">';
+
+    // En-tête de la comparaison
+    html += `
+        <div class="comparaison-header">
+            <div class="comparaison-title">
+                <span class="comparaison-icon">📊</span>
+                <h3>Comparaison avec votre évaluation du ${dateFormatee}</h3>
+            </div>
+        </div>
+    `;
+
+    // Résumé des changements
+    html += '<div class="comparaison-summary">';
+
+    // Carte progression
+    if (meilleuresProgressions.length > 0) {
+        html += `
+            <div class="summary-card summary-progress">
+                <div class="summary-card-icon">📈</div>
+                <div class="summary-card-content">
+                    <h4>Progression</h4>
+                    <p>${meilleuresProgressions.length} filière(s) en hausse</p>
+                    <p class="summary-highlight">+${meilleuresProgressions[0].difference} pts sur ${meilleuresProgressions[0].nom}</p>
+                </div>
+            </div>
+        `;
+    } else {
+        html += `
+            <div class="summary-card summary-neutral">
+                <div class="summary-card-icon">📊</div>
+                <div class="summary-card-content">
+                    <h4>Scores stables</h4>
+                    <p>Aucune progression significative</p>
+                </div>
+            </div>
+        `;
     }
 
-    html += '</div>';
+    // Carte changement de recommandation
+    if (ancienTop1 && nouveauTop1 && ancienTop1.id !== nouveauTop1.id) {
+        html += `
+            <div class="summary-card summary-change">
+                <div class="summary-card-icon">🔄</div>
+                <div class="summary-card-content">
+                    <h4>Nouvelle recommandation</h4>
+                    <p><strong>${ancienTop1.nom}</strong> → <strong>${nouveauTop1.nom}</strong></p>
+                </div>
+            </div>
+        `;
+    } else if (ancienTop1 && nouveauTop1) {
+        html += `
+            <div class="summary-card summary-confirm">
+                <div class="summary-card-icon">✅</div>
+                <div class="summary-card-content">
+                    <h4>Recommandation confirmée</h4>
+                    <p><strong>${nouveauTop1.nom}</strong> reste en tête</p>
+                </div>
+            </div>
+        `;
+    }
+
+    // Carte scores détaillés
+    html += '</div>'; // Fin comparaison-summary
+
+    // Tableau comparatif détaillé
+    html += '<div class="comparaison-table">';
+    html += '<h4>📋 Évolution détaillée par filière</h4>';
+
+    comparaisons.forEach(c => {
+        const diffClass = c.difference > 0 ? 'positive' : c.difference < 0 ? 'negative' : 'neutral';
+        const diffSign = c.difference > 0 ? '+' : '';
+        const diffIcon = c.difference > 0 ? '↗' : c.difference < 0 ? '↘' : '→';
+
+        html += `
+            <div class="comparaison-row">
+                <span class="comparaison-filiere">${c.nom}</span>
+                <div class="comparaison-scores">
+                    <span class="score-avant">${c.precedent}</span>
+                    <span class="score-fleche">${diffIcon}</span>
+                    <span class="score-apres">${c.score}</span>
+                    <span class="score-diff ${diffClass}">${diffSign}${c.difference}</span>
+                </div>
+            </div>
+        `;
+    });
+
+    html += '</div>'; // Fin comparaison-table
+
+    // Message d'encouragement
+    if (meilleuresProgressions.length >= 2) {
+        html += `
+            <div class="comparaison-encouragement">
+                <span>🎉</span>
+                <p>Félicitations ! Vos efforts ont porté leurs fruits. Continuez sur cette lancée !</p>
+            </div>
+        `;
+    } else if (filieresEnBaisse.length >= 2) {
+        html += `
+            <div class="comparaison-encouragement warning">
+                <span>💪</span>
+                <p>Certains scores sont en baisse. Concentrez-vous sur les matières clés pour améliorer vos résultats.</p>
+            </div>
+        `;
+    }
+
+    html += '</div>'; // Fin comparaison-container
+
     return html;
 }
+
 
 // ==========================================
 // MISE À JOUR DE L'INTERFACE
@@ -315,8 +827,8 @@ function updateUI() {
     prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-block';
 
     if (currentStep === TOTAL_STEPS) {
-        nextBtn.textContent = 'Voir les résultats';
-        nextBtn.className = 'btn-primary';
+        nextBtn.textContent = 'Terminé';
+        nextBtn.className = 'btn-primary btn-finished';
     } else if (!isStepValid(currentStep)) {
         nextBtn.textContent = '🔒 Complétez cette étape';
         nextBtn.className = 'btn-primary btn-disabled';
@@ -333,8 +845,14 @@ function updateUI() {
 // RENDU DE L'ÉTAPE COURANTE AVEC TRANSITION
 // ==========================================
 function renderStep() {
+    // Ajouter la classe fade-out
     content.classList.add('fade-out');
+
+    // Remonter en haut de la page avant le changement d'étape
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     setTimeout(() => {
+        // Vider et reconstruire l'étape
         content.innerHTML = '';
         switch (currentStep) {
             case 1: renderWelcome(); break;
@@ -346,8 +864,13 @@ function renderStep() {
             case 7: renderFilières(); break;
             case 8: renderResultats(); break;
         }
+
+        // Retirer la classe fade-out
         content.classList.remove('fade-out');
         updateUI();
+
+        // S'assurer qu'on est bien en haut après le rendu
+        window.scrollTo({ top: 0, behavior: 'instant' });
     }, 250);
 }
 
@@ -357,11 +880,53 @@ function renderStep() {
 function renderWelcome() {
     const alreadyCompleted = completedSteps.has(1);
     content.innerHTML = `
-        <h2>Bienvenue ${currentUser.nom} !</h2>
-        ${alreadyCompleted ? '<p style="color: #28a745; font-weight:500;">✅ Cette étape a déjà été validée.</p>' : ''}
-        <p>Ce tableau de bord va vous guider en 7 étapes pour déterminer les deux filières informatiques qui vous correspondent le mieux.</p>
-        <p>Préparez vos notes de L2 et répondez honnêtement aux questions.</p>
-        <p><strong>Cliquez sur « Suivant » pour commencer.</strong></p>
+        <div class="welcome-container">
+            <div class="welcome-icon">👋</div>
+            <h2>Bienvenue ${currentUser.nom} !</h2>
+            ${alreadyCompleted ? '<p class="welcome-badge">✅ Étape validée</p>' : ''}
+            
+            <div class="welcome-intro">
+                <p>Ce tableau de bord va vous guider en <strong>7 étapes</strong> pour déterminer les <strong>deux filières informatiques</strong> qui vous correspondent le mieux.</p>
+            </div>
+
+            <div class="welcome-steps-preview">
+                <div class="preview-item">
+                    <span class="preview-icon">📝</span>
+                    <span>Vos notes de L2</span>
+                </div>
+                <div class="preview-item">
+                    <span class="preview-icon">❤️</span>
+                    <span>Vos passions</span>
+                </div>
+                <div class="preview-item">
+                    <span class="preview-icon">📖</span>
+                    <span>Témoignages inspirants</span>
+                </div>
+                <div class="preview-item">
+                    <span class="preview-icon">🧠</span>
+                    <span>Quiz de culture générale</span>
+                </div>
+                <div class="preview-item">
+                    <span class="preview-icon">✅</span>
+                    <span>Vos prérequis</span>
+                </div>
+                <div class="preview-item">
+                    <span class="preview-icon">🎓</span>
+                    <span>Découverte des filières</span>
+                </div>
+                <div class="preview-item">
+                    <span class="preview-icon">🏆</span>
+                    <span>Résultat personnalisé</span>
+                </div>
+            </div>
+
+            <div class="welcome-tip">
+                <span class="tip-icon">💡</span>
+                <p>Préparez vos notes de L2 et répondez honnêtement aux questions pour obtenir la meilleure recommandation.</p>
+            </div>
+
+            <p class="welcome-start"><strong>Cliquez sur « Suivant » pour commencer votre orientation !</strong></p>
+        </div>
     `;
 }
 
@@ -731,38 +1296,22 @@ function renderQuiz() {
 
     const alreadyCompleted = completedSteps.has(5);
 
-    // Initialiser le quiz si nécessaire
     if (quizQuestions.length === 0) {
         quizQuestions = selectionnerQuestionsAleatoires(10);
         currentQuizIndex = 0;
         quizTermine = false;
         state.quizAnswers = {};
         state.quizPoints = { gl: 0, dm: 0, reseau: 0, msi: 0, asr: 0 };
-        console.log('📝 Quiz initialisé avec', quizQuestions.length, 'questions');
     }
 
-    // Vérifier si le quiz est terminé
-    const toutesRepondues = quizQuestions.every(q => 
-        state.quizAnswers[q.id] !== undefined && 
-        state.quizAnswers[q.id] !== null && 
-        state.quizAnswers[q.id] !== -1
-    );
-
-    if (toutesRepondues) {
-        quizTermine = true;
-        renderQuizTermine(alreadyCompleted);
-        return;
-    }
-
-    // Si l'index dépasse, afficher la fin
-    if (currentQuizIndex >= quizQuestions.length) {
-        quizTermine = true;
+    if (quizTermine || currentQuizIndex >= quizQuestions.length) {
         renderQuizTermine(alreadyCompleted);
         return;
     }
 
     const question = quizQuestions[currentQuizIndex];
     const totalQuestions = quizQuestions.length;
+    const correctIndex = question.correct !== undefined ? question.correct : 0;
 
     let html = '<h2>Quiz de culture générale informatique</h2>';
     if (alreadyCompleted) html += '<p style="color: #28a745; font-weight:500;">✅ Cette étape a déjà été validée. Vous pouvez refaire le quiz.</p>';
@@ -774,9 +1323,10 @@ function renderQuiz() {
 
     question.options.forEach((opt, idx) => {
         html += `
-            <div class="quiz-option-card" data-option="${idx}">
+            <div class="quiz-option-card" data-option="${idx}" data-correct="${idx === correctIndex ? 'true' : 'false'}">
                 <span class="option-letter">${String.fromCharCode(65 + idx)}</span>
                 <span class="option-text">${opt.texte}</span>
+                <span class="option-feedback"></span>
             </div>`;
     });
 
@@ -792,39 +1342,58 @@ function renderQuiz() {
 
     content.innerHTML = html;
 
+    // Gestion du clic sur les options
     document.querySelectorAll('.quiz-option-card').forEach(card => {
         card.addEventListener('click', function () {
-            if (this.classList.contains('selected')) return;
+            // Empêcher les doubles clics
+            if (this.classList.contains('selected') || this.classList.contains('correct') || this.classList.contains('incorrect')) return;
 
-            document.querySelectorAll('.quiz-option-card').forEach(c => { c.style.pointerEvents = 'none'; });
-            this.classList.add('selected');
+            // Désactiver tous les clics
+            document.querySelectorAll('.quiz-option-card').forEach(c => {
+                c.style.pointerEvents = 'none';
+            });
 
             const optionIdx = parseInt(this.dataset.option);
-            state.quizAnswers[question.id] = optionIdx;
-            console.log('✅ Question', question.id, 'répondue. Total réponses:', Object.keys(state.quizAnswers).length);
+            const isCorrect = this.dataset.correct === 'true';
 
+            // Enregistrer la réponse
+            state.quizAnswers[question.id] = optionIdx;
+
+            // Ajouter les points (toujours, même si mauvaise réponse)
             const points = question.options[optionIdx].points;
             for (let key in points) {
                 state.quizPoints[key] = (state.quizPoints[key] || 0) + points[key];
             }
 
+            // Appliquer les effets visuels
+            if (isCorrect) {
+                // Effet vert sur la carte sélectionnée
+                this.classList.add('correct');
+                this.querySelector('.option-feedback').innerHTML = '✅ <span>Bonne réponse !</span>';
+            } else {
+                // Effet rouge sur la carte sélectionnée
+                this.classList.add('incorrect');
+                this.querySelector('.option-feedback').innerHTML = '❌ <span>Mauvaise réponse</span>';
+
+                // Afficher la bonne réponse en vert
+                document.querySelectorAll('.quiz-option-card').forEach(c => {
+                    if (c.dataset.correct === 'true') {
+                        c.classList.add('correct');
+                        c.querySelector('.option-feedback').innerHTML = '✅ <span>Réponse correcte</span>';
+                    }
+                });
+            }
+
+            // Passer à la question suivante après un délai (pour voir le feedback)
             setTimeout(() => {
                 currentQuizIndex++;
-                
-                // Vérifier si toutes les questions sont répondues
-                const toutRepondu = quizQuestions.every(q => 
-                    state.quizAnswers[q.id] !== undefined && 
-                    state.quizAnswers[q.id] !== null && 
-                    state.quizAnswers[q.id] !== -1
-                );
 
-                if (toutRepondu || currentQuizIndex >= quizQuestions.length) {
+                if (currentQuizIndex >= quizQuestions.length) {
                     quizTermine = true;
-                    console.log('🏁 Quiz terminé ! Toutes les questions sont répondues.');
                 }
 
                 renderQuiz();
-            }, 500);
+            }, 1500); // 1.5 seconde pour voir le feedback
         });
     });
 }
@@ -838,6 +1407,44 @@ function selectionnerQuestionsAleatoires(nombreTotal) {
     return toutesLesQuestions.slice(0, Math.min(nombreTotal, toutesLesQuestions.length));
 }
 
+function melangerOptions(question) {
+    // Créer une copie des options avec leur index original
+    const optionsAvecIndex = question.options.map((opt, index) => ({
+        ...opt,
+        indexOriginal: index
+    }));
+
+    // Mélanger avec Fisher-Yates
+    for (let i = optionsAvecIndex.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [optionsAvecIndex[i], optionsAvecIndex[j]] = [optionsAvecIndex[j], optionsAvecIndex[i]];
+    }
+
+    // Trouver le nouvel index de la bonne réponse
+    const nouvelIndexCorrect = optionsAvecIndex.findIndex(opt => opt.indexOriginal === question.correct);
+
+    return {
+        ...question,
+        options: optionsAvecIndex,
+        correct: nouvelIndexCorrect
+    };
+}
+
+function selectionnerQuestionsAleatoires(nombreTotal) {
+    const toutesLesQuestions = [...DATA.questions];
+    
+    // Mélanger les questions
+    for (let i = toutesLesQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [toutesLesQuestions[i], toutesLesQuestions[j]] = [toutesLesQuestions[j], toutesLesQuestions[i]];
+    }
+    
+    // Prendre les 10 premières et mélanger leurs options
+    return toutesLesQuestions
+        .slice(0, Math.min(nombreTotal, toutesLesQuestions.length))
+        .map(q => melangerOptions(q));
+}
+
 function renderQuizTermine(alreadyCompleted) {
     const totalQuestions = quizQuestions.length;
     const nbReponses = quizQuestions.filter(q => 
@@ -845,25 +1452,46 @@ function renderQuizTermine(alreadyCompleted) {
         state.quizAnswers[q.id] !== null && 
         state.quizAnswers[q.id] !== -1
     ).length;
+    
+    const toutesRepondues = nbReponses >= totalQuestions;
+    const pourcentage = Math.round((nbReponses / totalQuestions) * 100);
 
     let html = '<h2>Quiz de culture générale informatique</h2>';
     if (alreadyCompleted) html += '<p style="color: #28a745; font-weight:500;">✅ Cette étape a déjà été validée.</p>';
-    html += `<div class="quiz-card quiz-completed">`;
-    html += `<div class="quiz-completed-icon">🎉</div>`;
-    html += `<h3>Quiz terminé !</h3>`;
-    html += `<p>Vous avez répondu à <strong>${nbReponses}</strong> questions sur <strong>${totalQuestions}</strong>.</p>`;
-    
-    if (nbReponses >= totalQuestions) {
-        html += `<p style="color:#28a745;">✅ Toutes les questions sont répondues. Vous pouvez passer à l'étape suivante.</p>`;
-    } else {
-        html += `<p style="color:#e67e22;">⚠️ Il manque ${totalQuestions - nbReponses} réponse(s). Le bouton Suivant sera débloqué quand tout sera répondu.</p>`;
-    }
-    
-    html += `<button id="quiz-restart" class="btn-primary" style="margin-top:1rem;">🔄 Refaire le quiz</button>`;
-    html += `</div>`;
-    content.innerHTML = html;
 
-    // Mettre à jour le bouton suivant
+    html += `
+        <div class="quiz-completed-container">
+            <div class="quiz-completed-header">
+                <div class="quiz-completed-icon">${toutesRepondues ? '🎉' : '📝'}</div>
+                <h3>${toutesRepondues ? 'Quiz terminé avec succès !' : 'Quiz terminé'}</h3>
+            </div>
+
+            <div class="quiz-completed-progress">
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill ${toutesRepondues ? 'complete' : ''}" style="width: ${pourcentage}%"></div>
+                </div>
+                <div class="quiz-progress-label">
+                    <span>${nbReponses} / ${totalQuestions} questions</span>
+                    <span>${pourcentage}%</span>
+                </div>
+            </div>
+
+            <div class="quiz-completed-message">
+                ${toutesRepondues 
+                    ? '<p>✅ <strong>Excellent !</strong> Toutes les questions sont répondues. Vos points sont comptabilisés pour l\'évaluation finale.</p>'
+                    : `<p>⚠️ Il vous manque <strong>${totalQuestions - nbReponses} réponse(s)</strong>. Répondez à toutes les questions pour débloquer le bouton Suivant.</p>`
+                }
+            </div>
+
+            <div class="quiz-completed-actions">
+                <button id="quiz-restart" class="btn-primary btn-quiz-action">
+                    🔄 Refaire le quiz
+                </button>
+            </div>
+        </div>
+    `;
+
+    content.innerHTML = html;
     updateUI();
 
     document.getElementById('quiz-restart')?.addEventListener('click', () => {
@@ -890,10 +1518,22 @@ function renderPrerequis() {
     }
 
     const alreadyCompleted = completedSteps.has(6);
+
     let html = '<h2>Vos prérequis</h2>';
-    if (alreadyCompleted) html += '<p style="color: #28a745; font-weight:500;">✅ Cette étape a déjà été validée. Vous pouvez modifier votre sélection.</p>';
+    if (alreadyCompleted) {
+        html += '<p style="color: #28a745; font-weight:500;">✅ Cette étape a déjà été validée. Vous pouvez modifier votre sélection.</p>';
+    }
     html += '<p>Cochez les compétences que vous maîtrisez déjà, classées par filière :</p>';
     html += '<div class="prerequis-container">';
+
+    // Couleurs par filière
+    const filiereColors = {
+        gl: { bg: 'rgba(37, 99, 235, 0.06)', border: 'rgba(37, 99, 235, 0.25)', accent: '#2563eb' },
+        dm: { bg: 'rgba(124, 58, 237, 0.06)', border: 'rgba(124, 58, 237, 0.25)', accent: '#7c3aed' },
+        reseau: { bg: 'rgba(5, 150, 105, 0.06)', border: 'rgba(5, 150, 105, 0.25)', accent: '#059669' },
+        msi: { bg: 'rgba(234, 88, 12, 0.06)', border: 'rgba(234, 88, 12, 0.25)', accent: '#ea580c' },
+        asr: { bg: 'rgba(220, 38, 38, 0.06)', border: 'rgba(220, 38, 38, 0.25)', accent: '#dc2626' }
+    };
 
     DATA.specialisations.forEach(spe => {
         const prerequisFiliere = DATA.prerequis.filter(pre => pre.filières.includes(spe.id));
@@ -901,23 +1541,36 @@ function renderPrerequis() {
 
         const nbCoches = prerequisFiliere.filter(pre => state.prerequis.includes(pre.id)).length;
         const total = prerequisFiliere.length;
+        const toutesCochees = nbCoches === total && total > 0;
+        const colors = filiereColors[spe.id] || filiereColors.gl;
 
         html += `
-            <div class="prerequis-card">
-                <div class="prerequis-card-header">
-                    <h3>${spe.nom}</h3>
-                    <span class="prerequis-count ${nbCoches === total ? 'all-checked' : ''}">${nbCoches}/${total}</span>
+            <div class="prerequis-card" style="border-color: ${toutesCochees ? colors.accent : colors.border}; background: ${toutesCochees ? colors.bg : 'var(--card-bg)'};">
+                <div class="prerequis-card-header" style="border-bottom-color: ${colors.border};">
+                    <div class="prerequis-header-left">
+                        <span class="prerequis-dot" style="background: ${colors.accent};"></span>
+                        <h3>${spe.nom}</h3>
+                    </div>
+                    <span class="prerequis-count ${toutesCochees ? 'all-checked' : ''}" style="${toutesCochees ? 'background: ' + colors.accent + '; color: #fff;' : ''}">
+                        ${nbCoches}/${total}
+                    </span>
                 </div>
                 <div class="prerequis-list">`;
+
         prerequisFiliere.forEach(pre => {
             const checked = state.prerequis.includes(pre.id) ? 'checked' : '';
             html += `
-                <label class="checkbox-label prerequis-item">
-                    <input type="checkbox" value="${pre.id}" ${checked}>
-                    <span class="checkbox-text">${pre.description}</span>
-                </label>`;
+                    <label class="prerequis-item">
+                        <input type="checkbox" value="${pre.id}" ${checked}>
+                        <span class="prerequis-checkbox"></span>
+                        <span class="prerequis-text">${pre.description}</span>
+                    </label>`;
         });
-        html += `</div></div>`;
+
+        html += `
+                </div>
+                ${toutesCochees ? '<div class="prerequis-complete-badge">✅ Tous les prérequis maîtrisés</div>' : ''}
+            </div>`;
     });
 
     html += '</div>';
@@ -925,18 +1578,49 @@ function renderPrerequis() {
 
     function updateCounters() {
         document.querySelectorAll('.prerequis-card').forEach(card => {
-            const total = card.querySelectorAll('input[type="checkbox"]').length;
+            const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+            const total = checkboxes.length;
             const coches = card.querySelectorAll('input[type="checkbox"]:checked').length;
             const countSpan = card.querySelector('.prerequis-count');
+            const badge = card.querySelector('.prerequis-complete-badge');
+            
             countSpan.textContent = `${coches}/${total}`;
-            countSpan.classList.toggle('all-checked', coches === total && total > 0);
+            
+            if (coches === total && total > 0) {
+                countSpan.classList.add('all-checked');
+                if (!badge) {
+                    const newBadge = document.createElement('div');
+                    newBadge.className = 'prerequis-complete-badge';
+                    newBadge.textContent = '✅ Tous les prérequis maîtrisés';
+                    card.appendChild(newBadge);
+                }
+            } else {
+                countSpan.classList.remove('all-checked');
+                if (badge) badge.remove();
+            }
         });
     }
 
     document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
         cb.addEventListener('change', () => {
-            if (cb.checked) state.prerequis.push(cb.value);
-            else state.prerequis = state.prerequis.filter(id => id !== cb.value);
+            const preId = cb.value;
+            
+            if (cb.checked) {
+                // Ajouter ce prérequis s'il n'y est pas déjà
+                if (!state.prerequis.includes(preId)) {
+                    state.prerequis.push(preId);
+                }
+            } else {
+                // Retirer ce prérequis
+                state.prerequis = state.prerequis.filter(id => id !== preId);
+            }
+            
+            // Synchroniser toutes les cases à cocher ayant le même ID
+            document.querySelectorAll(`input[type="checkbox"][value="${preId}"]`).forEach(otherCb => {
+                otherCb.checked = cb.checked;
+            });
+            
+            // Mettre à jour les compteurs de toutes les cartes
             updateCounters();
         });
     });
@@ -1084,8 +1768,9 @@ function renderResultats() {
     tousLesScores.forEach((item, index) => {
         const percentage = Math.round((item.score / maxScore) * 100);
         const color = colors[index] || '#6b7280';
+        const isTop2 = index < 2;
 
-        // Trouver le score précédent pour cette filière
+        // Trouver le score précédent
         let previousScore = null;
         let difference = null;
         if (evaluationPrecedente && evaluationPrecedente.tousLesScores) {
@@ -1104,13 +1789,17 @@ function renderResultats() {
                         ${item.score} pts
                         ${difference !== null ? 
                             (difference > 0 ? `<span style="color:#28a745;"> (+${difference})</span>` : 
-                             difference < 0 ? `<span style="color:#dc3545;"> (${difference})</span>` : 
-                             ' <span style="color:#6b7280;">(=)</span>') 
+                            difference < 0 ? `<span style="color:#dc3545;"> (${difference})</span>` : 
+                            ' <span style="color:#6b7280;">(=)</span>') 
                             : ''}
                     </span>
                 </div>
                 <div class="chart-bar-wrapper">
-                    <div class="chart-bar ${index < 2 ? 'top-bar' : ''}" style="width: ${percentage}%; background: ${color};"></div>
+                    <div class="chart-bar ${isTop2 ? 'top-bar' : ''}" 
+                        style="width: ${percentage}%; background: ${color};"
+                        data-nom="${item.nom}"
+                        data-score="${item.score} pts${difference !== null ? (difference > 0 ? ' +'+difference : difference < 0 ? ' '+difference : ' =') : ''}">
+                    </div>
                 </div>
             </div>`;
     });
@@ -1133,7 +1822,21 @@ function renderResultats() {
     }
     html += '</div>';
 
-    html += '<button id="restart-btn" class="btn-secondary" style="margin-top:1.5rem;">🔄 Nouvelle évaluation</button>';
+    html += `
+        <div class="restart-container">
+            <div class="restart-divider">
+                <span>🔄</span>
+            </div>
+            <button id="restart-btn" class="btn-restart">
+                <span class="restart-icon">🔄</span>
+                <span class="restart-text">
+                    <strong>Nouvelle évaluation</strong>
+                    <small>Commencez une nouvelle analyse</small>
+                </span>
+                <span class="restart-arrow">→</span>
+            </button>
+        </div>`;
+
     content.innerHTML = html;
 
     setTimeout(() => document.querySelectorAll('.chart-bar').forEach(bar => bar.style.transition = 'width 1s ease'), 100);
@@ -1168,21 +1871,38 @@ function renderResultats() {
 // NAVIGATION
 // ==========================================
 function nextStep() {
-    if (!isStepValid(currentStep)) { showValidationError(getValidationMessage(currentStep)); return; }
+    // Si on est à la dernière étape, afficher le message d'au revoir
+    if (currentStep === TOTAL_STEPS) {
+        showGoodbyeOverlay();
+        return;
+    }
+
+    if (!isStepValid(currentStep)) {
+        showValidationError(getValidationMessage(currentStep));
+        return;
+    }
+
     completedSteps.add(currentStep);
-    if (currentStep < TOTAL_STEPS) { currentStep++; renderStep(); }
+
+    if (currentStep < TOTAL_STEPS) {
+        currentStep++;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        renderStep();
+    }
 }
 
 function prevStep() {
-    if (currentStep > 1) { currentStep--; renderStep(); }
+    if (currentStep > 1) {
+        currentStep--;
+        // Remonter en haut
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        renderStep();
+    }
 }
+// ==========================================
+// INITIALISATION
+// ==========================================
 
-// ==========================================
-// INITIALISATION
-// ==========================================
-// ==========================================
-// INITIALISATION
-// ==========================================
 (async () => {
     try {
         const success = await loadData();
@@ -1206,6 +1926,115 @@ function prevStep() {
     }
 })();
 
+// ==========================================
+// BOUTONS DE SCROLL RAPIDE
+// ==========================================
+const scrollUpBtn = document.getElementById('scroll-up-btn');
+const scrollDownBtn = document.getElementById('scroll-down-btn');
+let scrollTimeout;
+
+// Détecter si on est sur mobile
+const isMobile = window.matchMedia('(max-width: 600px)').matches;
+
+function updateScrollButtons() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    const isAtTop = scrollTop < 100;
+    const isAtBottom = scrollTop + clientHeight >= scrollHeight - 100;
+
+    // Afficher les boutons
+    scrollUpBtn.style.display = 'flex';
+    scrollDownBtn.style.display = 'flex';
+
+    // Gérer le bouton "haut"
+    if (isAtTop) {
+        scrollUpBtn.style.opacity = '0.4';
+        scrollUpBtn.style.pointerEvents = 'none';
+    } else {
+        scrollUpBtn.style.opacity = '0.8';
+        scrollUpBtn.style.pointerEvents = 'auto';
+    }
+
+    // Gérer le bouton "bas"
+    if (isAtBottom) {
+        scrollDownBtn.style.opacity = '0.4';
+        scrollDownBtn.style.pointerEvents = 'none';
+    } else {
+        scrollDownBtn.style.opacity = '0.8';
+        scrollDownBtn.style.pointerEvents = 'auto';
+    }
+
+    // Délai avant disparition : 2 secondes sur mobile, 3 secondes sur desktop
+    const delay = isMobile ? 2000 : 3000;
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        scrollUpBtn.style.opacity = '0';
+        scrollDownBtn.style.opacity = '0';
+        setTimeout(() => {
+            if (scrollUpBtn.style.opacity === '0') {
+                scrollUpBtn.style.display = 'none';
+                scrollDownBtn.style.display = 'none';
+            }
+        }, 300);
+    }, delay);
+}
+
+// Fonctions de scroll
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToBottom() {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+}
+
+// Écouteurs d'événements
+scrollUpBtn.addEventListener('click', scrollToTop);
+scrollDownBtn.addEventListener('click', scrollToBottom);
+
+// Afficher les boutons au scroll
+window.addEventListener('scroll', () => {
+    updateScrollButtons();
+}, { passive: true });
+
+// Afficher les boutons au mouvement tactile sur mobile
+document.addEventListener('touchmove', () => {
+    updateScrollButtons();
+}, { passive: true });
+
+// Afficher les boutons au mouvement de la souris sur desktop
+document.addEventListener('mousemove', () => {
+    if (scrollUpBtn.style.display === 'none') {
+        updateScrollButtons();
+    }
+});
+
+// Cacher les boutons après un clic sur un bouton
+scrollUpBtn.addEventListener('click', () => {
+    setTimeout(() => {
+        scrollUpBtn.style.display = 'none';
+        scrollDownBtn.style.display = 'none';
+    }, 1000);
+});
+
+scrollDownBtn.addEventListener('click', () => {
+    setTimeout(() => {
+        scrollUpBtn.style.display = 'none';
+        scrollDownBtn.style.display = 'none';
+    }, 1000);
+});
+
+// Mettre à jour isMobile si la fenêtre est redimensionnée
+window.matchMedia('(max-width: 600px)').addEventListener('change', (e) => {
+    // Recalculer isMobile (on utilise e.matches directement)
+    if (e.matches) {
+        // Passage en mode mobile
+        updateScrollButtons();
+    }
+});
+
 
 nextBtn.addEventListener('click', nextStep);
 prevBtn.addEventListener('click', prevStep);
@@ -1215,4 +2044,5 @@ logoutBtn.addEventListener('click', () => {
     sessionStorage.removeItem('currentUser'); sessionStorage.removeItem('orientationProgress');
     sessionStorage.removeItem('quizCurrent'); sessionStorage.removeItem('completedSteps');
     window.location.href = '/login';
+    showGoodbyeOverlay();
 });
