@@ -2670,7 +2670,213 @@
     "prerequisValides": [],
     "suggestion": null,
     "theme": "dark",
-    "photo": "/uploads/profiles/24MM421SI-1780014604017.jpg"
+    "photo": "/uploads/profiles/24MM421SI-1780014604017.jpg",
+    "historiqueEvaluations": [
+      {
+        "id": "1780039310613",
+        "date": "2026-05-29T07:21:50.613Z",
+        "notes": {
+          "analyse_math": 20,
+          "comptabilite": 12,
+          "statistique": 5,
+          "reseaux": 9,
+          "archi_ordi": 10,
+          "vba": 11,
+          "base_donnees": 13,
+          "prog_c": 15,
+          "algo_python": 1,
+          "crea_pub": 12,
+          "dessin_ordi": 14,
+          "electronique": 10,
+          "theorie_info": 1,
+          "comm_visuelle": 2,
+          "prog_web": 5,
+          "hygiene_sante": 8,
+          "comm_expression": 9,
+          "anglais": 6,
+          "recherche_sci": 5
+        },
+        "passions": [
+          "aucune_idee"
+        ],
+        "quizPoints": {
+          "gl": 45,
+          "dm": 26,
+          "reseau": 38,
+          "msi": 38,
+          "asr": 42
+        },
+        "prerequis": [
+          "poo",
+          "algo",
+          "ui_ux",
+          "uml",
+          "securite",
+          "virtualisation",
+          "docker"
+        ],
+        "likedFiliere": {
+          "gl": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 75.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+            "debouchés": [
+              "Administrateur système",
+              "Ingénieur cloud",
+              "DevOps",
+              "Ingénieur infrastructure",
+              "Administrateur base de données"
+            ],
+            "score": 61.2
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 75.2
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 61.2
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 58.5
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 55.9
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 45.1
+          }
+        ]
+      }
+    ],
+    "derniereEvaluation": {
+      "id": "1780039310613",
+      "date": "2026-05-29T07:21:50.613Z",
+      "notes": {
+        "analyse_math": 20,
+        "comptabilite": 12,
+        "statistique": 5,
+        "reseaux": 9,
+        "archi_ordi": 10,
+        "vba": 11,
+        "base_donnees": 13,
+        "prog_c": 15,
+        "algo_python": 1,
+        "crea_pub": 12,
+        "dessin_ordi": 14,
+        "electronique": 10,
+        "theorie_info": 1,
+        "comm_visuelle": 2,
+        "prog_web": 5,
+        "hygiene_sante": 8,
+        "comm_expression": 9,
+        "anglais": 6,
+        "recherche_sci": 5
+      },
+      "passions": [
+        "aucune_idee"
+      ],
+      "quizPoints": {
+        "gl": 45,
+        "dm": 26,
+        "reseau": 38,
+        "msi": 38,
+        "asr": 42
+      },
+      "prerequis": [
+        "poo",
+        "algo",
+        "ui_ux",
+        "uml",
+        "securite",
+        "virtualisation",
+        "docker"
+      ],
+      "likedFiliere": {
+        "gl": 1
+      },
+      "resultats": [
+        {
+          "id": "gl",
+          "nom": "Génie Logiciel",
+          "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+          "debouchés": [
+            "Développeur full-stack",
+            "Architecte logiciel",
+            "Ingénieur DevOps",
+            "Chef de projet IT",
+            "Développeur mobile"
+          ],
+          "score": 75.2
+        },
+        {
+          "id": "asr",
+          "nom": "Administration Système & Réseau",
+          "description": "Gestion des serveurs, virtualisation, cloud computing et automatisation. Vous deviendrez le garant de l'infrastructure informatique.",
+          "debouchés": [
+            "Administrateur système",
+            "Ingénieur cloud",
+            "DevOps",
+            "Ingénieur infrastructure",
+            "Administrateur base de données"
+          ],
+          "score": 61.2
+        }
+      ],
+      "tousLesScores": [
+        {
+          "id": "gl",
+          "nom": "Génie Logiciel",
+          "score": 75.2
+        },
+        {
+          "id": "asr",
+          "nom": "Administration Système & Réseau",
+          "score": 61.2
+        },
+        {
+          "id": "msi",
+          "nom": "Management des Systèmes d'Information",
+          "score": 58.5
+        },
+        {
+          "id": "reseau",
+          "nom": "Réseau & Télécommunication",
+          "score": 55.9
+        },
+        {
+          "id": "dm",
+          "nom": "Design & Multimédia",
+          "score": 45.1
+        }
+      ]
+    }
   },
   {
     "id": "1779892372789",
@@ -2736,6 +2942,362 @@
     "prerequisValides": [],
     "suggestion": null,
     "theme": "light",
+    "historiqueEvaluations": [],
+    "derniereEvaluation": null
+  },
+  {
+    "id": "1780054426246",
+    "nom": "TSHIMANGA MULUMBA Jeddidia",
+    "matricule": "24TM421SI",
+    "email": "jeddidia@gmail.com",
+    "password": "jed1234",
+    "dateInscription": "2026-05-29T11:33:46.246Z",
+    "theme": "dark",
+    "photo": "/uploads/profiles/24TM421SI-1780060798132.jpg",
+    "progression": {},
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequis": [],
+    "likedFiliere": {},
+    "suggestion": [],
+    "historiqueEvaluations": [
+      {
+        "id": "1780062328988",
+        "date": "2026-05-29T13:45:28.988Z",
+        "notes": {
+          "analyse_math": 8,
+          "comptabilite": 7,
+          "statistique": 5,
+          "reseaux": 8,
+          "archi_ordi": 5,
+          "vba": 9,
+          "base_donnees": 5,
+          "prog_c": 4,
+          "algo_python": 7,
+          "crea_pub": 5,
+          "dessin_ordi": 8,
+          "electronique": 4,
+          "theorie_info": 5,
+          "comm_visuelle": 6,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 4,
+          "recherche_sci": 2
+        },
+        "passions": [
+          "msi",
+          "gl"
+        ],
+        "quizPoints": {
+          "gl": 37,
+          "dm": 24,
+          "reseau": 21,
+          "msi": 37,
+          "asr": 25
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "ui_ux",
+          "uml",
+          "securite",
+          "reseau_base",
+          "virtualisation"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "reseau": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 63.3
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "description": "Gestion des données, systèmes décisionnels, ERP et analyse de données. Vous apprendrez à piloter l'information au service de l'entreprise.",
+            "debouchés": [
+              "Consultant BI",
+              "Data analyst",
+              "Chef de projet SI",
+              "Administrateur ERP",
+              "Business Analyst"
+            ],
+            "score": 56.3
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 63.3
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 56.3
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 40.6
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.5
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 35.2
+          }
+        ]
+      },
+      {
+        "id": "1780062586399",
+        "date": "2026-05-29T13:49:46.399Z",
+        "notes": {
+          "analyse_math": 8,
+          "comptabilite": 7,
+          "statistique": 5,
+          "reseaux": 8,
+          "archi_ordi": 5,
+          "vba": 9,
+          "base_donnees": 5,
+          "prog_c": 4,
+          "algo_python": 7,
+          "crea_pub": 5,
+          "dessin_ordi": 8,
+          "electronique": 4,
+          "theorie_info": 5,
+          "comm_visuelle": 6,
+          "prog_web": 5,
+          "hygiene_sante": 4,
+          "comm_expression": 8,
+          "anglais": 4,
+          "recherche_sci": 2
+        },
+        "passions": [
+          "gl",
+          "dm"
+        ],
+        "quizPoints": {
+          "gl": 49,
+          "dm": 70,
+          "reseau": 40,
+          "msi": 43,
+          "asr": 39
+        },
+        "prerequis": [
+          "algo",
+          "poo",
+          "ui_ux",
+          "uml",
+          "securite",
+          "reseau_base",
+          "virtualisation",
+          "sql"
+        ],
+        "likedFiliere": {
+          "gl": 1,
+          "reseau": 1,
+          "asr": 1
+        },
+        "resultats": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+            "debouchés": [
+              "Développeur full-stack",
+              "Architecte logiciel",
+              "Ingénieur DevOps",
+              "Chef de projet IT",
+              "Développeur mobile"
+            ],
+            "score": 56.2
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "description": "Création graphique, design d'interfaces, audiovisuel et multimédia. Vous développerez votre créativité à travers les outils de conception modernes.",
+            "debouchés": [
+              "Web designer",
+              "Graphiste",
+              "UI/UX designer",
+              "Motion designer",
+              "Directeur artistique",
+              "Infographiste"
+            ],
+            "score": 54.6
+          }
+        ],
+        "tousLesScores": [
+          {
+            "id": "gl",
+            "nom": "Génie Logiciel",
+            "score": 56.2
+          },
+          {
+            "id": "dm",
+            "nom": "Design & Multimédia",
+            "score": 54.6
+          },
+          {
+            "id": "asr",
+            "nom": "Administration Système & Réseau",
+            "score": 39.8
+          },
+          {
+            "id": "reseau",
+            "nom": "Réseau & Télécommunication",
+            "score": 38.6
+          },
+          {
+            "id": "msi",
+            "nom": "Management des Systèmes d'Information",
+            "score": 37.2
+          }
+        ]
+      }
+    ],
+    "derniereEvaluation": {
+      "id": "1780062586399",
+      "date": "2026-05-29T13:49:46.399Z",
+      "notes": {
+        "analyse_math": 8,
+        "comptabilite": 7,
+        "statistique": 5,
+        "reseaux": 8,
+        "archi_ordi": 5,
+        "vba": 9,
+        "base_donnees": 5,
+        "prog_c": 4,
+        "algo_python": 7,
+        "crea_pub": 5,
+        "dessin_ordi": 8,
+        "electronique": 4,
+        "theorie_info": 5,
+        "comm_visuelle": 6,
+        "prog_web": 5,
+        "hygiene_sante": 4,
+        "comm_expression": 8,
+        "anglais": 4,
+        "recherche_sci": 2
+      },
+      "passions": [
+        "gl",
+        "dm"
+      ],
+      "quizPoints": {
+        "gl": 49,
+        "dm": 70,
+        "reseau": 40,
+        "msi": 43,
+        "asr": 39
+      },
+      "prerequis": [
+        "algo",
+        "poo",
+        "ui_ux",
+        "uml",
+        "securite",
+        "reseau_base",
+        "virtualisation",
+        "sql"
+      ],
+      "likedFiliere": {
+        "gl": 1,
+        "reseau": 1,
+        "asr": 1
+      },
+      "resultats": [
+        {
+          "id": "gl",
+          "nom": "Génie Logiciel",
+          "description": "Conception, développement et maintenance de logiciels robustes. Vous apprendrez à maîtriser les langages de programmation, les bases de données et les méthodologies de gestion de projets informatiques.",
+          "debouchés": [
+            "Développeur full-stack",
+            "Architecte logiciel",
+            "Ingénieur DevOps",
+            "Chef de projet IT",
+            "Développeur mobile"
+          ],
+          "score": 56.2
+        },
+        {
+          "id": "dm",
+          "nom": "Design & Multimédia",
+          "description": "Création graphique, design d'interfaces, audiovisuel et multimédia. Vous développerez votre créativité à travers les outils de conception modernes.",
+          "debouchés": [
+            "Web designer",
+            "Graphiste",
+            "UI/UX designer",
+            "Motion designer",
+            "Directeur artistique",
+            "Infographiste"
+          ],
+          "score": 54.6
+        }
+      ],
+      "tousLesScores": [
+        {
+          "id": "gl",
+          "nom": "Génie Logiciel",
+          "score": 56.2
+        },
+        {
+          "id": "dm",
+          "nom": "Design & Multimédia",
+          "score": 54.6
+        },
+        {
+          "id": "asr",
+          "nom": "Administration Système & Réseau",
+          "score": 39.8
+        },
+        {
+          "id": "reseau",
+          "nom": "Réseau & Télécommunication",
+          "score": 38.6
+        },
+        {
+          "id": "msi",
+          "nom": "Management des Systèmes d'Information",
+          "score": 37.2
+        }
+      ]
+    }
+  },
+  {
+    "id": "1780309340224",
+    "nom": "Pierre NGOY",
+    "matricule": "24PN421SI",
+    "email": "pierre@gmail.com",
+    "password": "pierre1234",
+    "dateInscription": "2026-06-01T10:22:20.224Z",
+    "theme": "light",
+    "photo": null,
+    "progression": {},
+    "notes": {},
+    "passions": [],
+    "quizPoints": {},
+    "prerequis": [],
+    "likedFiliere": {},
+    "suggestion": [],
     "historiqueEvaluations": [],
     "derniereEvaluation": null
   }
