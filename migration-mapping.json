@@ -1,0 +1,127 @@
+[
+  {
+    "fichier": "24MM421SI-1780014604017.jpg",
+    "chemin_local": "public/uploads/profiles/24MM421SI-1780014604017.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647845/orientation/photos/c0ris2gmr4k1l6iddxox.jpg"
+  },
+  {
+    "fichier": "24TM421SI-1780060798132.jpg",
+    "chemin_local": "public/uploads/profiles/24TM421SI-1780060798132.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647848/orientation/photos/mscsr1adt11abzuvcavq.jpg"
+  },
+  {
+    "fichier": "24TT421SI-1780561985732.jpg",
+    "chemin_local": "public/uploads/profiles/24TT421SI-1780561985732.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647850/orientation/photos/zgfo5ilvljxmd2yexzum.jpg"
+  },
+  {
+    "fichier": "24YM421SI.jpg",
+    "chemin_local": "public/uploads/profiles/24YM421SI.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647851/orientation/photos/s1tdcoaktilgkgpx8ssx.jpg"
+  },
+  {
+    "fichier": "linux_vi_f77.pdf",
+    "chemin_local": "public/cours/asr/linux_vi_f77.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647853/orientation/cours/asr/hwsv2u7rwd7jywlwrz5m.pdf"
+  },
+  {
+    "fichier": "sql_cours_complet.pdf",
+    "chemin_local": "public/cours/asr/sql_cours_complet.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647860/orientation/cours/asr/fqjjrefzctjjmh4xntjg.pdf"
+  },
+  {
+    "fichier": "support-de-cours-linux.pdf",
+    "chemin_local": "public/cours/asr/support-de-cours-linux.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647861/orientation/cours/asr/pykwn7u1h9icvsvbppfg.pdf"
+  },
+  {
+    "fichier": "apprenez-a-programmer-en-java.pdf",
+    "chemin_local": "public/cours/gl/apprenez-a-programmer-en-java.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647923/orientation/cours/gl/od6ce7bcgoqzghqxrrir.pdf"
+  },
+  {
+    "fichier": "cours_c++.pdf",
+    "chemin_local": "public/cours/gl/cours_c++.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647927/orientation/cours/gl/st5iwzqsio6yfo8bgxtq.pdf"
+  },
+  {
+    "fichier": "cours_c++2.pdf",
+    "chemin_local": "public/cours/gl/cours_c++2.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647929/orientation/cours/gl/xcghtjwlrw823zz2h9k3.pdf"
+  },
+  {
+    "fichier": "javanotes5.pdf",
+    "chemin_local": "public/cours/gl/javanotes5.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647943/orientation/cours/gl/intucdiej7rdpigibnce.pdf"
+  },
+  {
+    "fichier": "le-langage-c-1.pdf",
+    "chemin_local": "public/cours/gl/le-langage-c-1.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647947/orientation/cours/gl/bimcvprjylb7a4qsimwb.pdf"
+  },
+  {
+    "fichier": "sql_cours_complet.pdf",
+    "chemin_local": "public/cours/gl/sql_cours_complet.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647978/orientation/cours/gl/gtl7ngulv686e8etolk5.pdf"
+  },
+  {
+    "fichier": "un-zeste-de-python.pdf",
+    "chemin_local": "public/cours/gl/un-zeste-de-python.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647982/orientation/cours/gl/peazto4gmuuacygozsqe.pdf"
+  },
+  {
+    "fichier": "Access.pdf",
+    "chemin_local": "public/cours/msi/Access.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781647984/orientation/cours/msi/fdobtztmqjjxtvonai5e.pdf"
+  },
+  {
+    "fichier": "excel2021-part1.pdf",
+    "chemin_local": "public/cours/msi/excel2021-part1.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648012/orientation/cours/msi/frren5nhxizxj5wzcrcs.pdf"
+  },
+  {
+    "fichier": "extrait-du-livre.pdf",
+    "chemin_local": "public/cours/msi/extrait-du-livre.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648018/orientation/cours/msi/mqugsi9lsjhwzqjiaqbo.pdf"
+  },
+  {
+    "fichier": "sql_cours_complet.pdf",
+    "chemin_local": "public/cours/msi/sql_cours_complet.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648025/orientation/cours/msi/mklp0yrohr97tef55ohl.pdf"
+  },
+  {
+    "fichier": "vba.pdf",
+    "chemin_local": "public/cours/msi/vba.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648029/orientation/cours/msi/vvw0ibimikgdni2e3iic.pdf"
+  },
+  {
+    "fichier": "CMs-Reseaux.pdf",
+    "chemin_local": "public/cours/reseau/CMs-Reseaux.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648034/orientation/cours/reseau/r0djcs2m2pi4cfx3dpvd.pdf"
+  },
+  {
+    "fichier": "Support-KHATIR2021.pdf",
+    "chemin_local": "public/cours/reseau/Support-KHATIR2021.pdf",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648050/orientation/cours/reseau/bn66xaltsoexrcu1y11k.pdf"
+  },
+  {
+    "fichier": "24MM421SI-1780014604017.jpg",
+    "chemin_local": "public/uploads/profiles/24MM421SI-1780014604017.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648052/orientation/uploads/profiles/zjvcs73xsc5zcwudmxcz.jpg"
+  },
+  {
+    "fichier": "24TM421SI-1780060798132.jpg",
+    "chemin_local": "public/uploads/profiles/24TM421SI-1780060798132.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648054/orientation/uploads/profiles/flrfedm99hfa98tgqnpf.jpg"
+  },
+  {
+    "fichier": "24TT421SI-1780561985732.jpg",
+    "chemin_local": "public/uploads/profiles/24TT421SI-1780561985732.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648055/orientation/uploads/profiles/tq7fdnwwayeouiknu6jl.jpg"
+  },
+  {
+    "fichier": "24YM421SI.jpg",
+    "chemin_local": "public/uploads/profiles/24YM421SI.jpg",
+    "url_cloudinary": "https://res.cloudinary.com/dfosclwrp/image/upload/v1781648057/orientation/uploads/profiles/rokcebojdboihdoobgvs.jpg"
+  }
+]

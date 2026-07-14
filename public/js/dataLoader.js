@@ -2,27 +2,26 @@ const DATA = {};
 
 async function loadData() {
     try {
-        console.log('🔄 Chargement des données...');
-        
+        console.log('🔄 Chargement des données depuis MySQL...');
+
         const [speRes, questRes, prereqRes, temRes] = await Promise.all([
-            fetch('data/specialisations.json'),
-            fetch('data/questions.json'),
-            fetch('data/prerequis.json'),
-            fetch('data/temoignages.json')
+            fetch('/api/specialisations'),
+            fetch('/api/questions'),
+            fetch('/api/prerequis'),
+            fetch('/api/temoignages')
         ]);
 
-        // Vérifier que toutes les réponses sont OK
-        if (!speRes.ok) throw new Error(`Erreur specialisations.json: ${speRes.status}`);
-        if (!questRes.ok) throw new Error(`Erreur questions.json: ${questRes.status}`);
-        if (!prereqRes.ok) throw new Error(`Erreur prerequis.json: ${prereqRes.status}`);
-        if (!temRes.ok) throw new Error(`Erreur temoignages.json: ${temRes.status}`);
+        if (!speRes.ok) throw new Error(`Erreur spécialisations: ${speRes.status}`);
+        if (!questRes.ok) throw new Error(`Erreur questions: ${questRes.status}`);
+        if (!prereqRes.ok) throw new Error(`Erreur prérequis: ${prereqRes.status}`);
+        if (!temRes.ok) throw new Error(`Erreur témoignages: ${temRes.status}`);
 
         DATA.specialisations = await speRes.json();
         DATA.questions = await questRes.json();
         DATA.prerequis = await prereqRes.json();
         DATA.temoignages = await temRes.json();
 
-        console.log('✅ Données chargées avec succès :');
+        console.log('✅ Données chargées avec succès depuis MySQL :');
         console.log('   - Spécialisations :', DATA.specialisations.length);
         console.log('   - Questions :', DATA.questions.length);
         console.log('   - Prérequis :', DATA.prerequis.length);

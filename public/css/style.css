@@ -4650,3 +4650,245 @@ input[type="number"].input-error {
 .profile-theme-value span {
     transition: all 0.3s ease;
 }
+
+/* ==========================================
+   SECTION RESSOURCES
+   ========================================== */
+
+.results-ressources {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.results-ressources h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.ressources-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.btn-ressource {
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-ressource:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
+}
+
+.ressources-detail {
+    margin-top: 1rem;
+    animation: slideDown 0.3s ease;
+}
+
+.ressources-container {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ressources-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), #7c3aed);
+    color: #fff;
+}
+
+.ressources-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.ressources-close {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.ressources-body {
+    padding: 1.5rem;
+}
+
+.ressource-section {
+    margin-bottom: 1.5rem;
+}
+
+.ressource-section h5 {
+    margin: 0 0 0.8rem 0;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* PDF */
+.pdf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pdf-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--bg-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background 0.2s;
+}
+
+.pdf-item:hover {
+    background: var(--border);
+}
+
+.pdf-icon { font-size: 1.3rem; }
+.pdf-nom { flex: 1; font-weight: 500; }
+.pdf-download { color: var(--primary); font-weight: 600; font-size: 0.85rem; }
+
+/* Sites */
+.sites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.site-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--bg-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background 0.2s;
+}
+
+.site-item:hover {
+    background: var(--border);
+}
+
+.site-icon { font-size: 1.2rem; }
+.site-info { flex: 1; }
+.site-info strong { display: block; font-size: 0.9rem; }
+.site-info p { margin: 0.2rem 0 0; font-size: 0.8rem; opacity: 0.7; }
+.site-arrow { font-size: 1.2rem; opacity: 0.5; }
+
+/* Livres */
+.livres-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.livre-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--bg-color);
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.livre-icon { font-size: 1.2rem; }
+
+@media (max-width: 600px) {
+    .ressources-actions {
+        flex-direction: column;
+    }
+    
+    .btn-ressource {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .ressources-body {
+        padding: 1rem;
+    }
+}
+
+.pdf-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.pdf-taille {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+/* Boutons de l'overlay d'au revoir */
+.goodbye-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.goodbye-buttons button {
+    padding: 0.3rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.goodbye-buttons .btn-secondary {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    color: var(--text-color);
+}
+
+.goodbye-buttons .btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.goodbye-buttons .btn-primary {
+    background: var(--primary);
+    border: none;
+    color: #fff;
+}
+
+.goodbye-buttons .btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+@media (max-width: 600px) {
+    .goodbye-buttons {
+        flex-direction: column;
+    }
+    
+    .goodbye-buttons button {
+        width: 100%;
+    }
+}

@@ -93,6 +93,7 @@ function showGoodbyeOverlay() {
     const nameSpan = document.getElementById('goodbye-name');
     const countdownEl = document.getElementById('goodbye-countdown');
     const closeBtn = document.getElementById('goodbye-close-btn');
+    const cancelBtn = document.getElementById('goodbye-cancel-btn');
 
     // Afficher le nom
     nameSpan.textContent = currentUser.nom;
@@ -101,31 +102,56 @@ function showGoodbyeOverlay() {
     overlay.style.display = 'flex';
 
     // Compte à rebours
-    let countdown = 10;
+    let countdown = 5;
     countdownEl.textContent = countdown;
+    let countdownInterval;
 
-    const countdownInterval = setInterval(() => {
-        countdown--;
-        countdownEl.textContent = countdown;
+    function startCountdown() {
+        countdownInterval = setInterval(() => {
+            countdown--;
+            countdownEl.textContent = countdown;
 
-        if (countdown <= 0) {
-            clearInterval(countdownInterval);
-            logout();
-        }
-    }, 1000);
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                logout();
+            }
+        }, 1000);
+    }
+
+    startCountdown();
 
     // Bouton de déconnexion immédiate
-    closeBtn.addEventListener('click', () => {
+    closeBtn.onclick = () => {
         clearInterval(countdownInterval);
         logout();
-    });
+    };
 
-    // Empêcher la fermeture accidentelle
+    // Bouton d'annulation - rester sur la plateforme
+    cancelBtn.onclick = () => {
+        clearInterval(countdownInterval);
+        overlay.style.display = 'none';
+        // Revenir à l'étape des résultats
+        console.log('↩️ L\'utilisateur a choisi de rester');
+    };
+
+    // Empêcher la fermeture accidentelle en cliquant à l'extérieur
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
-            // Ne rien faire, l'utilisateur doit cliquer sur le bouton
+            // Ne rien faire
         }
     });
+}
+
+// Fonction de déconnexion propre
+function logout() {
+    quizQuestions = [];
+    currentQuizIndex = 0;
+    quizTermine = false;
+    sessionStorage.removeItem('currentUser');
+    sessionStorage.removeItem('orientationProgress');
+    sessionStorage.removeItem('quizCurrent');
+    sessionStorage.removeItem('completedSteps');
+    window.location.href = '/login';
 }
 
 // Fonction de déconnexion propre
@@ -827,7 +853,7 @@ function updateUI() {
     prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-block';
 
     if (currentStep === TOTAL_STEPS) {
-        nextBtn.textContent = 'Terminé';
+        nextBtn.textContent = '🏁 Terminé';
         nextBtn.className = 'btn-primary btn-finished';
     } else if (!isStepValid(currentStep)) {
         nextBtn.textContent = '🔒 Complétez cette étape';
@@ -839,6 +865,31 @@ function updateUI() {
 
     sessionStorage.setItem('orientationProgress', JSON.stringify({ ...state, currentStep }));
     sessionStorage.setItem('completedSteps', JSON.stringify([...completedSteps]));
+
+    // Sauvegarder la progression côté serveur (MySQL)
+    saveProgressionToServer();
+}
+
+// Fonction de sauvegarde vers MySQL
+async function saveProgressionToServer() {
+    try {
+        await fetch('/api/save-progression', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                matricule: currentUser.matricule,
+                progression: {
+                    notes: state.notes,
+                    passions: state.passions,
+                    quizPoints: state.quizPoints,
+                    prerequis: state.prerequis,
+                    likedFiliere: state.likedFiliere
+                }
+            })
+        });
+    } catch (err) {
+        console.error('Erreur sauvegarde progression:', err);
+    }
 }
 
 // ==========================================
@@ -1750,9 +1801,11 @@ function renderResultats() {
     if (evaluationPrecedente) {
         html += '<p style="color: var(--primary); margin-bottom:1.5rem;">🔄 <strong>Comparaison avec votre évaluation précédente</strong></p>';
     } else if (hasNoIdea) {
-        html += '<p style="color: var(--primary); margin-bottom:1.5rem;">📊 <strong>Orientation neutre</strong></p>';
+        html += '<p style="color: var(--primary); margin-bottom:1.5rem;">📊 <strong>Orientation neutre :</strong> Vous n\'aviez pas de préférence particulière. Notre recommandation est basée sur vos notes, le quiz et vos compétences.</p>';
     } else if (hasPassions) {
-        html += '<p style="color: var(--primary); margin-bottom:1.5rem;">🎯 <strong>Orientation personnalisée</strong></p>';
+        html += '<p style="color: var(--primary); margin-bottom:1.5rem;">🎯 <strong>Orientation personnalisée :</strong> Nous avons pris en compte vos passions tout en analysant objectivement vos notes, le quiz et vos compétences.</p>';
+    } else {
+        html += '<p style="color: var(--primary); margin-bottom:1.5rem;">📋 <strong>Orientation générale :</strong> Notre analyse est basée sur l\'ensemble de vos résultats.</p>';
     }
 
     // Comparaison avec l'évaluation précédente
@@ -1770,7 +1823,6 @@ function renderResultats() {
         const color = colors[index] || '#6b7280';
         const isTop2 = index < 2;
 
-        // Trouver le score précédent
         let previousScore = null;
         let difference = null;
         if (evaluationPrecedente && evaluationPrecedente.tousLesScores) {
@@ -1789,16 +1841,16 @@ function renderResultats() {
                         ${item.score} pts
                         ${difference !== null ? 
                             (difference > 0 ? `<span style="color:#28a745;"> (+${difference})</span>` : 
-                            difference < 0 ? `<span style="color:#dc3545;"> (${difference})</span>` : 
-                            ' <span style="color:#6b7280;">(=)</span>') 
+                             difference < 0 ? `<span style="color:#dc3545;"> (${difference})</span>` : 
+                             ' <span style="color:#6b7280;">(=)</span>') 
                             : ''}
                     </span>
                 </div>
                 <div class="chart-bar-wrapper">
                     <div class="chart-bar ${isTop2 ? 'top-bar' : ''}" 
-                        style="width: ${percentage}%; background: ${color};"
-                        data-nom="${item.nom}"
-                        data-score="${item.score} pts${difference !== null ? (difference > 0 ? ' +'+difference : difference < 0 ? ' '+difference : ' =') : ''}">
+                         style="width: ${percentage}%; background: ${color};"
+                         data-nom="${item.nom}"
+                         data-score="${item.score} pts${difference !== null ? (difference > 0 ? ' +'+difference : difference < 0 ? ' '+difference : ' =') : ''}">
                     </div>
                 </div>
             </div>`;
@@ -1817,34 +1869,75 @@ function renderResultats() {
                 <div class="result-card">
                     <h3>${medailles[index]} ${spe.nom} (score : ${spe.score})</h3>
                     <p>${spe.description}</p>
+                    <p><strong>Pourquoi ?</strong> 
+                    ${hasNoIdea 
+                        ? 'Cette filière correspond le mieux à vos résultats objectifs (notes, quiz, compétences).' 
+                        : hasPassions && index === 0 && state.passions.includes(spe.id)
+                            ? 'Cette filière correspond à la fois à vos passions et à vos résultats objectifs !'
+                            : 'Vos résultats (notes, passions, quiz, compétences) convergent vers cette filière.'
+                    }
+                    </p>
                 </div>`;
         });
     }
     html += '</div>';
 
+    // Section Ressources
+    html += '<div class="results-ressources">';
+    html += '<h3>📚 Ressources pour aller plus loin</h3>';
+    html += '<p>Cliquez sur une filière pour voir les ressources disponibles :</p>';
+    html += '<div class="ressources-actions" id="ressources-buttons">';
+    resultats.forEach((spe) => {
+        html += `
+            <button class="btn-ressource" data-filiere="${spe.id}" data-nom="${spe.nom.replace(/"/g, '&quot;')}">
+                📖 Ressources pour ${spe.nom}
+            </button>`;
+    });
+    html += '</div>';
+    html += '<div id="ressources-detail" class="ressources-detail" style="display:none;"></div>';
+    html += '</div>';
+
+    // Bouton recommencer
     html += `
         <div class="restart-container">
-            <div class="restart-divider">
-                <span>🔄</span>
-            </div>
+            <div class="restart-divider"><span>ou</span></div>
             <button id="restart-btn" class="btn-restart">
                 <span class="restart-icon">🔄</span>
                 <span class="restart-text">
                     <strong>Nouvelle évaluation</strong>
-                    <small>Commencez une nouvelle analyse</small>
+                    <small>Recommencer avec de nouvelles données</small>
                 </span>
                 <span class="restart-arrow">→</span>
             </button>
-        </div>`;
+        </div>
+    `;
 
     content.innerHTML = html;
 
-    setTimeout(() => document.querySelectorAll('.chart-bar').forEach(bar => bar.style.transition = 'width 1s ease'), 100);
+    // Écouteurs pour les boutons de ressources
+    document.querySelectorAll('.btn-ressource').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filiereId = this.dataset.filiere;
+            const filiereNom = this.dataset.nom;
+            afficherRessources(filiereId, filiereNom);
+        });
+    });
 
+    // Animation des barres
+    setTimeout(() => {
+        document.querySelectorAll('.chart-bar').forEach(bar => {
+            bar.style.transition = 'width 1s ease';
+        });
+    }, 100);
+
+    // Bouton recommencer
     document.getElementById('restart-btn')?.addEventListener('click', () => {
-        quizQuestions = []; currentQuizIndex = 0; quizTermine = false;
-        evaluationPrecedente = null;
-        sessionStorage.clear();
+        quizQuestions = [];
+        currentQuizIndex = 0;
+        quizTermine = false;
+        sessionStorage.removeItem('orientationProgress');
+        sessionStorage.removeItem('quizCurrent');
+        sessionStorage.removeItem('completedSteps');
         location.reload();
     });
 
@@ -1866,6 +1959,132 @@ function renderResultats() {
         })
     }).catch(err => console.error('Sauvegarde évaluation échouée', err));
 }
+
+// ==========================================
+// AFFICHAGE DES RESSOURCES
+// ==========================================
+
+async function afficherRessources(filiereId, filiereNom) {
+    const detailDiv = document.getElementById('ressources-detail');
+    
+    if (!detailDiv) {
+        console.error('❌ Élément ressources-detail non trouvé');
+        return;
+    }
+
+    // Afficher un loader
+    detailDiv.style.display = 'block';
+    detailDiv.innerHTML = '<p style="text-align:center; padding:1rem;">⏳ Chargement des ressources...</p>';
+    detailDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    try {
+        console.log('📚 Chargement ressources pour:', filiereId);
+        const response = await fetch(`/api/ressources/${filiereId}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (!data.success) {
+            detailDiv.innerHTML = '<p style="color:red; padding:1rem;">❌ Ressources non disponibles pour cette filière.</p>';
+            return;
+        }
+
+        const r = data.ressources;
+        let html = `
+            <div class="ressources-container">
+                <div class="ressources-header">
+                    <h4>📚 ${r.nom}</h4>
+                    <button class="ressources-close" onclick="document.getElementById('ressources-detail').style.display='none'">✕</button>
+                </div>
+                <div class="ressources-body">
+        `;
+
+        // Section PDF
+        if (r.pdfs && r.pdfs.length > 0) {
+            html += '<div class="ressource-section">';
+            html += '<h5>📄 Documents PDF à télécharger</h5>';
+            html += '<div class="pdf-list">';
+            r.pdfs.forEach(pdf => {
+                html += `
+                    <a href="/api/download-pdf/${filiereId}/${encodeURIComponent(pdf.fichier)}" class="pdf-item" download>
+                        <span class="pdf-icon">📕</span>
+                        <div class="pdf-info">
+                            <span class="pdf-nom">${pdf.nom}</span>
+                            <span class="pdf-taille">${formatTaille(pdf.taille)}</span>
+                        </div>
+                        <span class="pdf-download">⬇ Télécharger</span>
+                    </a>`;
+            });
+            html += '</div></div>';
+        } else {
+            html += '<div class="ressource-section">';
+            html += '<h5>📄 Documents PDF</h5>';
+            html += '<p style="opacity:0.6; font-style:italic;">Aucun PDF disponible pour le moment dans cette filière.</p>';
+            html += '</div>';
+        }
+
+        // Section Sites web
+        if (r.sites && r.sites.length > 0) {
+            html += '<div class="ressource-section">';
+            html += '<h5>🌐 Sites recommandés pour apprendre</h5>';
+            html += '<div class="sites-list">';
+            r.sites.forEach(site => {
+                html += `
+                    <a href="${site.url}" target="_blank" rel="noopener" class="site-item">
+                        <span class="site-icon">🔗</span>
+                        <div class="site-info">
+                            <strong>${site.nom}</strong>
+                            <p>${site.description}</p>
+                        </div>
+                        <span class="site-arrow">→</span>
+                    </a>`;
+            });
+            html += '</div></div>';
+        }
+
+        // Section Livres
+        if (r.livres && r.livres.length > 0) {
+            html += '<div class="ressource-section">';
+            html += '<h5>📖 Livres recommandés</h5>';
+            html += '<div class="livres-list">';
+            r.livres.forEach(livre => {
+                html += `
+                    <div class="livre-item">
+                        <span class="livre-icon">📘</span>
+                        <span><strong>${livre.nom}</strong> - ${livre.auteur}</span>
+                    </div>`;
+            });
+            html += '</div></div>';
+        }
+
+        html += '</div></div>';
+        detailDiv.innerHTML = html;
+        detailDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    } catch (err) {
+        console.error('❌ Erreur chargement ressources:', err);
+        detailDiv.innerHTML = '<p style="color:red; padding:1rem;">❌ Erreur lors du chargement des ressources. Veuillez réessayer.</p>';
+    }
+}
+
+// Formater la taille des fichiers
+function formatTaille(octets) {
+    if (!octets || octets === 0) return '0 Ko';
+    const ko = octets / 1024;
+    if (ko < 1024) return `${Math.round(ko)} Ko`;
+    const mo = ko / 1024;
+    return `${Math.round(mo * 10) / 10} Mo`;
+}
+
+// Rendre les fonctions accessibles globalement
+window.afficherRessources = afficherRessources;
+window.formatTaille = formatTaille;
+
+// Rendre la fonction accessible globalement
+window.afficherRessources = afficherRessources;
 
 // ==========================================
 // NAVIGATION
